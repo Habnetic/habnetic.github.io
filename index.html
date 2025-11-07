@@ -81,6 +81,8 @@
       opacity: 0.8;
       z-index: 1;
       box-sizing: border-box;
+      transform-origin: 50% 50%;
+      will-change: transform; /* ensures GPU acceleration for smooth rotation */
     }
     
     .orbit::before, .orbit::after {
