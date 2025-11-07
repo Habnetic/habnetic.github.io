@@ -6,115 +6,195 @@
   <title>Habnetic</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 
   <style>
     :root {
       --navy: #0b132b;
+      --teal: #09303a;
       --turquoise: #29d3c3;
       --coral: #ff6b6b;
       --white: #f9f9f9;
     }
 
-    html, body {
-      height: 100%;
-      margin: 0;
-      background-color: var(--navy);
-      color: var(--white);
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+    body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(180deg, var(--navy) 0%, var(--teal) 100%);
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: rgba(11, 19, 43, 0.6);
+      backdrop-filter: blur(6px);
+      padding: 0.8em 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0 1.2em;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--turquoise); }
+
+    /* HERO SECTION */
+    section {
+      padding: 100px 20px;
+      text-align: center;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
-      text-align: center;
+      align-items: center;
     }
 
-    .logo {
-      width: 180px;
-      height: auto;
+    #home {
       position: relative;
-      z-index: 2;
+      overflow: hidden;
     }
 
-    /* Orbital animation */
     .orbit {
       position: absolute;
-      width: 240px;
-      height: 240px;
+      width: 260px;
+      height: 260px;
       border: 2px solid var(--coral);
       border-radius: 50%;
-      animation: spin 18s linear infinite;
+      animation: spin 22s linear infinite;
       opacity: 0.8;
+      z-index: 1;
     }
 
     .orbit::before, .orbit::after {
       content: "";
       position: absolute;
-      width: 12px;
-      height: 12px;
+      width: 14px;
+      height: 14px;
       background: var(--coral);
       border-radius: 50%;
     }
 
-    .orbit::before { top: -6px; left: 50%; transform: translateX(-50%); }
-    .orbit::after  { bottom: -6px; right: 50%; transform: translateX(50%); }
+    .orbit::before { top: -7px; left: 50%; transform: translateX(-50%); }
+    .orbit::after  { bottom: -7px; right: 50%; transform: translateX(50%); }
 
     @keyframes spin {
       from { transform: rotate(0deg); }
       to   { transform: rotate(360deg); }
     }
 
-    h1 {
-      margin-top: 1.2em;
-      font-size: 1.8rem;
-      letter-spacing: 0.03em;
-      color: var(--turquoise);
+    .logo {
+      width: 190px;
+      height: auto;
+      position: relative;
+      z-index: 2;
     }
 
-    p {
-      max-width: 480px;
-      line-height: 1.5;
-      margin: 0.5em auto;
-      color: var(--white);
-      opacity: 0.9;
+    h1 {
+      font-size: 1.8rem;
+      margin-top: 1.5em;
+      color: var(--turquoise);
+      letter-spacing: 0.03em;
+    }
+
+    /* CONTENT SECTIONS */
+    #about, #research, #contact {
+      max-width: 800px;
+      margin: auto;
+      padding: 100px 20px;
+      line-height: 1.6;
+    }
+
+    #about h2, #research h2, #contact h2 {
+      color: var(--turquoise);
+      margin-bottom: 1em;
+      font-size: 1.6rem;
     }
 
     a {
       color: var(--coral);
       text-decoration: none;
     }
+
     a:hover { text-decoration: underline; }
 
     footer {
-      position: fixed;
-      bottom: 1em;
-      font-size: 0.85rem;
+      text-align: center;
+      padding: 2em 0;
       color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
-      .orbit { width: 180px; height: 180px; }
-      .logo { width: 140px; }
+      nav a { margin: 0 0.6em; }
+      .orbit { width: 200px; height: 200px; }
+      .logo { width: 150px; }
     }
   </style>
 </head>
+
 <body>
-  <div class="orbit"></div>
-  <img src="logo.png" alt="Habnetic logo" class="logo">
 
-  <h1>Bayesian modeling for resilient habitats<br>on Earth and beyond</h1>
+  <header>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <p>
-    Habnetic is an open research initiative exploring probabilistic models of housing resilience 
-    and adaptive habitat design. Developed independently by <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank">Mikel Martínez</a>, 
-    it bridges architecture, data science, and Bayesian reasoning to understand how built environments respond under uncertainty.
-  </p>
+  <section id="home">
+    <div class="orbit"></div>
+    <img src="logo.png" alt="Habnetic logo" class="logo">
+    <h1>Bayesian modeling for resilient habitats<br>on Earth and beyond</h1>
+  </section>
 
-  <p>
-    <a href="https://github.com/Habnetic" target="_blank">GitHub Organization</a>
-  </p>
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      <strong>Habnetic</strong> is an open research initiative exploring probabilistic models of housing resilience
+      and adaptive habitat design. Developed independently by Mikel Martínez, it bridges architecture,
+      data science, and Bayesian reasoning to understand how built environments respond under uncertainty.
+    </p>
+  </section>
 
-  <footer>© Habnetic | 2025</footer>
+  <section id="research">
+    <h2>Research</h2>
+    <p>
+      The project combines data from open scientific sources such as NASA, ESA, and UN Habitat
+      to model how housing systems behave under stochastic events. Its long-term goal is to extend these frameworks
+      from terrestrial housing to extraplanetary habitats.
+    </p>
+    <p>
+      All models and datasets are released under open-source licenses to encourage transparency and collaboration.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Collaboration and research inquiries welcome.</p>
+    <p>
+      <a href="mailto:info@habnetic.org">info@habnetic.org</a><br>
+      <a href="https://github.com/Habnetic" target="_blank">GitHub Organization</a><br>
+      <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank">LinkedIn — Mikel Martínez</a>
+    </p>
+  </section>
+
+  <footer>
+    © Habnetic | 2025
+  </footer>
+
 </body>
 </html>
