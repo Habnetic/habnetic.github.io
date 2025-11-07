@@ -4,22 +4,117 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Habnetic</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
-    body {
-      font-family: system-ui, sans-serif;
-      background: #f9f7f5;
-      color: #222;
-      text-align: center;
-      padding: 10%;
+    :root {
+      --navy: #0b132b;
+      --turquoise: #29d3c3;
+      --coral: #ff6b6b;
+      --white: #f9f9f9;
     }
-    img { max-width: 200px; margin-bottom: 2em; }
-    a { color: #0066cc; text-decoration: none; }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: var(--navy);
+      color: var(--white);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .logo {
+      width: 180px;
+      height: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Orbital animation */
+    .orbit {
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      border: 2px solid var(--coral);
+      border-radius: 50%;
+      animation: spin 18s linear infinite;
+      opacity: 0.8;
+    }
+
+    .orbit::before, .orbit::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background: var(--coral);
+      border-radius: 50%;
+    }
+
+    .orbit::before { top: -6px; left: 50%; transform: translateX(-50%); }
+    .orbit::after  { bottom: -6px; right: 50%; transform: translateX(50%); }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    h1 {
+      margin-top: 1.2em;
+      font-size: 1.8rem;
+      letter-spacing: 0.03em;
+      color: var(--turquoise);
+    }
+
+    p {
+      max-width: 480px;
+      line-height: 1.5;
+      margin: 0.5em auto;
+      color: var(--white);
+      opacity: 0.9;
+    }
+
+    a {
+      color: var(--coral);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      position: fixed;
+      bottom: 1em;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .orbit { width: 180px; height: 180px; }
+      .logo { width: 140px; }
+    }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Habnetic Logo">
-  <h1>Habnetic</h1>
-  <p>Open framework for resilient habitat modeling and probabilistic design.</p>
-  <p><a href="https://github.com/Habnetic">Explore on GitHub</a></p>
+  <div class="orbit"></div>
+  <img src="logo.png" alt="Habnetic logo" class="logo">
+
+  <h1>Bayesian modeling for resilient habitats<br>on Earth and beyond</h1>
+
+  <p>
+    Habnetic is an open research initiative exploring probabilistic models of housing resilience 
+    and adaptive habitat design. Developed independently by <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank">Mikel Martínez</a>, 
+    it bridges architecture, data science, and Bayesian reasoning to understand how built environments respond under uncertainty.
+  </p>
+
+  <p>
+    <a href="https://github.com/Habnetic" target="_blank">GitHub Organization</a>
+  </p>
+
+  <footer>© Habnetic | 2025</footer>
 </body>
 </html>
