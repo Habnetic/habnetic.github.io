@@ -34,16 +34,17 @@
       width: 100%;
       display: flex;
       justify-content: center;
-      background: rgba(11, 19, 43, 0.6);
-      backdrop-filter: blur(6px);
+      background: rgba(11, 19, 43, 0.65);
+      backdrop-filter: blur(8px);
       padding: 0.8em 0;
       z-index: 100;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     nav a {
       color: var(--white);
       text-decoration: none;
-      margin: 0 1.2em;
+      margin: 0 1em;
       font-weight: 500;
       transition: color 0.3s;
     }
@@ -52,9 +53,8 @@
 
     /* HERO SECTION */
     section {
-      padding: 100px 20px;
+      padding: 80px 20px;
       text-align: center;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -63,13 +63,15 @@
 
     #home {
       position: relative;
+      height: 90vh;
+      min-height: 550px;
       overflow: hidden;
     }
 
     .orbit {
       position: absolute;
-      width: 260px;
-      height: 260px;
+      width: 320px;
+      height: 320px;
       border: 2px solid var(--coral);
       border-radius: 50%;
       animation: spin 22s linear infinite;
@@ -95,7 +97,8 @@
     }
 
     .logo {
-      width: 190px;
+      width: 250px;
+      max-width: 70vw;
       height: auto;
       position: relative;
       z-index: 2;
@@ -103,22 +106,29 @@
 
     h1 {
       font-size: 1.8rem;
-      margin-top: 1.5em;
+      margin-top: 1.4em;
       color: var(--turquoise);
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
+    }
+
+    .vision {
+      margin-top: 0.8em;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
     }
 
     /* CONTENT SECTIONS */
     #about, #research, #contact {
-      max-width: 800px;
+      max-width: 820px;
       margin: auto;
-      padding: 100px 20px;
       line-height: 1.6;
+      padding: 60px 20px;
     }
 
     #about h2, #research h2, #contact h2 {
       color: var(--turquoise);
-      margin-bottom: 1em;
+      margin-bottom: 0.8em;
       font-size: 1.6rem;
     }
 
@@ -136,10 +146,14 @@
       font-size: 0.9rem;
     }
 
+    /* RESPONSIVE */
     @media (max-width: 600px) {
-      nav a { margin: 0 0.6em; }
-      .orbit { width: 200px; height: 200px; }
-      .logo { width: 150px; }
+      nav a { margin: 0 0.5em; font-size: 0.9rem; }
+      .orbit { width: 220px; height: 220px; }
+      .logo { width: 180px; }
+      h1 { font-size: 1.3rem; }
+      .vision { font-size: 0.95rem; }
+      #about, #research, #contact { padding: 50px 20px; }
     }
   </style>
 </head>
@@ -159,6 +173,7 @@
     <div class="orbit"></div>
     <img src="logo.png" alt="Habnetic logo" class="logo">
     <h1>Bayesian modeling for resilient habitats<br>on Earth and beyond</h1>
+    <p class="vision">Building open tools for the probabilistic future of housing.</p>
   </section>
 
   <section id="about">
@@ -173,12 +188,13 @@
   <section id="research">
     <h2>Research</h2>
     <p>
-      The project combines data from open scientific sources such as NASA, ESA, and UN Habitat
-      to model how housing systems behave under stochastic events. Its long-term goal is to extend these frameworks
-      from terrestrial housing to extraplanetary habitats.
+      Habnetic develops Bayesian and stochastic frameworks to study resilience in housing and habitat systems.
+      It draws on open data from scientific and environmental institutions worldwide, integrating them
+      into transparent, reproducible models that help predict and adapt to uncertainty.
     </p>
     <p>
-      All models and datasets are released under open-source licenses to encourage transparency and collaboration.
+      The project aims to make complex risk modeling accessible to designers, researchers, and policymakers
+      exploring resilient and adaptive habitats for Earth — and eventually beyond it.
     </p>
   </section>
 
