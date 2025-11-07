@@ -67,24 +67,22 @@
     .orbit-container {
       position: relative;
       display: inline-block;
-      width: 320px;
-      height: 320px;
+      width: min(70vw, 320px);
+      aspect-ratio: 1 / 1;
       margin-top: 80px;
     }
-
+    
     .orbit {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       border: 2px solid var(--coral);
       border-radius: 50%;
       animation: spin 22s linear infinite;
       opacity: 0.8;
       z-index: 1;
+      box-sizing: border-box;
     }
-
+    
     .orbit::before, .orbit::after {
       content: "";
       position: absolute;
@@ -93,17 +91,12 @@
       background: var(--coral);
       border-radius: 50%;
     }
-
+    
     .orbit::before { top: -7px; left: 50%; transform: translateX(-50%); }
     .orbit::after  { bottom: -7px; right: 50%; transform: translateX(50%); }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
-
+    
     .logo {
-      width: 250px;
+      width: 80%;
       height: auto;
       position: absolute;
       top: 50%;
