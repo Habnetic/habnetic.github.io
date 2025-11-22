@@ -212,7 +212,7 @@ footer .footer-links a:hover {
   .orbit-container {
     width: 230px;     /* bigger than before */
     height: 230px;
-    margin-top: 100px; /* respects header height */
+    margin-top: 120px; /* respects header height */
   }
 
   .logo {
