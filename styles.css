@@ -191,43 +191,54 @@ footer .footer-links a:hover {
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
+
+  /* Taller header */
   header {
-    padding: 0.9em 0;
+    padding: 1.2em 0;
   }
 
   nav a {
-    margin: 0 0.6em;
-    font-size: 0.95rem;   /* slightly smaller, but not tiny */
+    margin: 0 0.9em;
+    font-size: 1.05rem;   /* good readable size */
   }
 
+  /* Hero sizing */
   .orbit-container {
-    width: 230px;
-    height: 230px;
-    margin-top: 70px;
+    width: 300px;     /* bigger than before */
+    height: 300px;
+    margin-top: 95px; /* respects header height */
   }
 
   .logo {
-    width: 180px;
+    width: 230px;     /* also bigger */
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-top: 1.2em;
   }
 
   .vision {
-    font-size: 0.98rem;
+    font-size: 1.1rem;
   }
 
+  /* Section text */
   #about,
   #research,
   #contact {
-    padding: 45px 20px;
+    padding: 60px 20px;
   }
 
   #about p,
   #research p,
   #contact p {
-    font-size: 0.98rem;
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  #about h2,
+  #research h2,
+  #contact h2 {
+    font-size: 1.8rem;
   }
 }
