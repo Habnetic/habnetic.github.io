@@ -197,20 +197,26 @@ footer .footer-links a:hover {
     padding: 1.2em 0;
   }
 
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    }
+
   nav a {
-    margin: 0 0.9em;
-    font-size: 1.05rem;   /* good readable size */
-  }
+    margin: 0 0.6em;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    }
 
   /* Hero sizing */
   .orbit-container {
-    width: 300px;     /* bigger than before */
-    height: 300px;
+    width: 250px;     /* bigger than before */
+    height: 250px;
     margin-top: 95px; /* respects header height */
   }
 
   .logo {
-    width: 230px;     /* also bigger */
+    width: 200px;     /* also bigger */
   }
 
   h1 {
