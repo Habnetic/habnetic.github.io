@@ -39,4 +39,4 @@ To update the live version:
 
 ---
 
-© 2025 Habnetic — Open Research for Resilient Futures
+© 2026 Habnetic — Open Research for Resilient Futures
