@@ -14,6 +14,8 @@ The research framework is explored through a progressive sequence of case studie
 
 The site is built using **GitHub Pages** with plain HTML, CSS, and minimal JavaScript for long-term transparency, reproducibility, and maintainability.
 
+Current content reflects ongoing work; results and visualizations evolve as pipelines mature.
+
 ---
 
 ## 🧩 Research Scope
