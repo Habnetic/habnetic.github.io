@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Habnetic</title>
 
-  <meta name="description" content="Habnetic is an independent open-source research project on posterior decision stability for uncertainty-aware urban flood prioritisation.">
+  <meta name="description" content="Habnetic is an independent open-source research project on posterior decision stability for robust, uncertainty-aware prioritisation.">
   <link rel="canonical" href="https://habnetic.org/">
 
   <meta property="og:title" content="Habnetic">
-  <meta property="og:description" content="Posterior decision stability for uncertainty-aware prioritisation.">
+  <meta property="og:description" content="Posterior decision stability for robust prioritisation.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://habnetic.org/">
   <meta property="og:image" content="https://habnetic.org/assets/images/og-image.png">
@@ -41,11 +41,11 @@
   <main id="main">
     <section id="home" class="hero">
       <div class="hero-content">
-        <p class="eyebrow">Open-source Bayesian research</p>
+        <p class="eyebrow">Posterior decision stability</p>
 
         <h1>
           Posterior decision stability for
-          <span>uncertainty-aware prioritisation.</span>
+          <span>robust prioritisation.</span>
         </h1>
 
         <p class="hero-subtitle">
@@ -80,7 +80,7 @@
             <strong id="hero-city">Rotterdam</strong>
             <span id="hero-buildings">221,324 buildings</span>
             <span id="hero-topk">Top-priority set: k = 2,213 · 1%</span>
-            <span id="hero-boundary">Uncertain boundary: 0.01%</span>
+            <span id="hero-boundary">Boundary assets: 0.01%</span>
           </div>
 
           <div class="hero-legend" aria-label="Map legend">
@@ -140,7 +140,7 @@
     <section id="outputs" class="section">
       <div class="section-heading">
         <p class="eyebrow">Research outputs</p>
-        <h2>Documents for review and reuse</h2>
+        <h2>Explore the research</h2>
       </div>
 
       <div class="cards">
@@ -188,7 +188,7 @@
             methods for posterior decision stability and robust prioritisation under uncertainty.
           </p>
           <p>
-            Current work focuses on urban flood prioritisation, using Rotterdam as the baseline
+            Current case study focuses on urban flood prioritisation, using Rotterdam as the baseline
             case followed by cross-city transfer to Hamburg and Donostia.
           </p>
         </div>
@@ -216,7 +216,7 @@
 
     <div>
       <p>© 2026 Habnetic — Open research lab for posterior decision stability</p>
-      <p>Created by Mikel Martínez · Architect &amp; Data Strategist</p>
+      <p>Created by Mikel Martínez · Independent Researcher</p>
       <p>
         <a href="https://github.com/Habnetic" target="_blank" rel="noopener noreferrer">GitHub</a> ·
         <a href="mailto:info@habnetic.org">Email</a> ·
@@ -226,74 +226,72 @@
   </footer>
 
   <script>
-  const heroCities = [
-    {
-      city: "Rotterdam",
-      image: "assets/images/hero/rotterdam.png",
-      alt: "Rotterdam posterior top-k probability map",
-      buildings: "221,324 buildings",
-      topk: "Top-priority set: k = 2,213 · 1%",
-      boundary: "Boundary assets: 0.01%"
-    },
-    {
-      city: "Hamburg",
-      image: "assets/images/hero/hamburg.png",
-      alt: "Hamburg posterior top-k probability map",
-      buildings: "341,530 buildings",
-      topk: "Top-priority set: k = 3,415 · 1%",
-      boundary: "Boundary assets: 0.02%"
-    },
-    {
-      city: "Donostia",
-      image: "assets/images/hero/donostia.png",
-      alt: "Donostia posterior top-k probability map",
-      buildings: "7,755 buildings",
-      topk: "Top-priority set: k = 78 · 1%",
-      boundary: "Boundary assets: 0.17%"
+    const heroCities = [
+      {
+        city: "Rotterdam",
+        image: "assets/images/hero/rotterdam.png",
+        alt: "Rotterdam posterior top-k probability map",
+        buildings: "221,324 buildings",
+        topk: "Top-priority set: k = 2,213 · 1%",
+        boundary: "Boundary assets: 0.01%"
+      },
+      {
+        city: "Hamburg",
+        image: "assets/images/hero/hamburg.png",
+        alt: "Hamburg posterior top-k probability map",
+        buildings: "341,530 buildings",
+        topk: "Top-priority set: k = 3,415 · 1%",
+        boundary: "Boundary assets: 0.02%"
+      },
+      {
+        city: "Donostia",
+        image: "assets/images/hero/donostia.png",
+        alt: "Donostia posterior top-k probability map",
+        buildings: "7,755 buildings",
+        topk: "Top-priority set: k = 78 · 1%",
+        boundary: "Boundary assets: 0.17%"
+      }
+    ];
+
+    const heroA = document.getElementById("hero-map-a");
+    const heroB = document.getElementById("hero-map-b");
+    const heroCard = document.querySelector(".hero-info-card");
+    const heroCity = document.getElementById("hero-city");
+    const heroBuildings = document.getElementById("hero-buildings");
+    const heroTopk = document.getElementById("hero-topk");
+    const heroBoundary = document.getElementById("hero-boundary");
+
+    let currentHero = 0;
+    let activeImage = heroA;
+    let inactiveImage = heroB;
+
+    function updateHero() {
+      currentHero = (currentHero + 1) % heroCities.length;
+      const next = heroCities[currentHero];
+
+      inactiveImage.src = next.image;
+      inactiveImage.alt = next.alt;
+
+      heroCard.classList.add("is-fading");
+
+      setTimeout(() => {
+        heroCity.textContent = next.city;
+        heroBuildings.textContent = next.buildings;
+        heroTopk.textContent = next.topk;
+        heroBoundary.textContent = next.boundary;
+
+        heroCard.classList.remove("is-fading");
+      }, 450);
+
+      inactiveImage.classList.add("is-active");
+      activeImage.classList.remove("is-active");
+
+      const oldActive = activeImage;
+      activeImage = inactiveImage;
+      inactiveImage = oldActive;
     }
-  ];
-  
 
-  const heroA = document.getElementById("hero-map-a");
-  const heroB = document.getElementById("hero-map-b");
-  const heroCard = document.querySelector(".hero-info-card");
-  const heroCity = document.getElementById("hero-city");
-  const heroBuildings = document.getElementById("hero-buildings");
-  const heroTopk = document.getElementById("hero-topk");
-  const heroBoundary = document.getElementById("hero-boundary");
-
-  let currentHero = 0;
-  let activeImage = heroA;
-  let inactiveImage = heroB;
-
-  function updateHero() {
-    currentHero = (currentHero + 1) % heroCities.length;
-    const next = heroCities[currentHero];
-
-    inactiveImage.src = next.image;
-    inactiveImage.alt = next.alt;
-
-    heroCard.classList.add("is-fading");
-
-    setTimeout(() => {
-      heroCity.textContent = next.city;
-      heroBuildings.textContent = next.buildings;
-      heroTopk.textContent = next.topk;
-      heroBoundary.textContent = next.boundary;
-
-      heroCard.classList.remove("is-fading");
-      
-    }, 450);
-
-    inactiveImage.classList.add("is-active");
-    activeImage.classList.remove("is-active");
-
-    const oldActive = activeImage;
-    activeImage = inactiveImage;
-    inactiveImage = oldActive;
-  }
-
-  setInterval(updateHero, 11000);
-</script>
+    setInterval(updateHero, 11000);
+  </script>
 </body>
 </html>
