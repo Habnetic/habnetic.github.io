@@ -5,112 +5,184 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Habnetic</title>
 
-  <!-- Basic SEO -->
-  <meta name="description" content="Habnetic is an open research lab building Bayesian simulation tools for housing resilience, from Earth baselines to off-world habitat design.">
+  <meta name="description" content="Habnetic is an independent open-source research project on posterior decision stability for uncertainty-aware urban flood prioritisation.">
   <link rel="canonical" href="https://habnetic.org/">
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Habnetic">
-  <meta property="og:description" content="Bayesian modeling for resilient habitats on Earth and beyond.">
+  <meta property="og:description" content="Posterior decision stability for uncertainty-aware prioritisation.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://habnetic.org/">
-  <meta property="og:image" content="https://habnetic.org/og-image.png">
+  <meta property="og:image" content="https://habnetic.org/assets/images/og-image.png">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <a class="skip-link" href="#about">Skip to content</a>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <header>
-    <nav>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Habnetic home">
+      <img src="assets/images/logo.png" alt="" class="brand-logo">
+      <span>Habnetic</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary navigation">
       <a href="#home">Home</a>
+      <a href="#findings">Findings</a>
+      <a href="#outputs">Outputs</a>
       <a href="#about">About</a>
-      <a href="#research">Research</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <section id="home">
-    <div class="orbit-container">
-      <div class="orbit"></div>
-      <img src="logo.png" alt="Habnetic logo" class="logo">
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Open-source Bayesian research</p>
+
+        <h1>
+          Posterior decision stability for
+          <span>uncertainty-aware prioritisation.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Habnetic estimates which high-priority decisions remain reliable under uncertainty,
+          and where review should focus instead.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="assets/docs/habnetic_demo.pdf">Explore demo</a>
+          <a class="btn btn-secondary" href="assets/docs/habnetic_onepager.pdf">One-pager</a>
+          <span class="btn btn-secondary btn-disabled">Paper coming soon</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Posterior top-k probability map">
+        <img src="assets/images/hero/rotterdam.png" alt="Rotterdam posterior top-k probability map">
+        <div class="hero-city-label">
+          <strong>Rotterdam</strong>
+          <span>221,324 buildings</span>
+          <span>Top-priority set: 1%</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="findings" class="section">
+      <div class="findings-panel">
+        <div class="finding finding-main">
+          <span class="finding-icon">◎</span>
+          <div>
+            <h2>Most prioritisation decisions remain stable.</h2>
+            <p>Decision uncertainty concentrates near a narrow posterior decision boundary.</p>
+          </div>
+        </div>
+
+        <div class="finding">
+          <span class="finding-icon">⌕</span>
+          <p>Only boundary assets remain uncertain.</p>
+        </div>
+
+        <div class="finding">
+          <span class="finding-icon">⌗</span>
+          <p>Review only boundary decisions.</p>
+        </div>
+
+        <div class="finding">
+          <span class="finding-icon">◈</span>
+          <p>Prioritise robust decisions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="outputs" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Research outputs</p>
+        <h2>Documents for review and reuse</h2>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <img src="assets/images/cards/onepager-preview.png" alt="One-pager preview">
+          <div class="card-body">
+            <h3>One-pager</h3>
+            <p>A visual summary of the framework and key results.</p>
+            <a href="assets/docs/habnetic_onepager.pdf">View one-pager →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/cards/demo-preview.png" alt="Demo preview">
+          <div class="card-body">
+            <h3>Demo</h3>
+            <p>A compact walkthrough of posterior decision stability across cities.</p>
+            <a href="assets/docs/habnetic_demo.pdf">Launch demo →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/images/cards/paper-preview.png" alt="Research paper preview">
+          <div class="card-body">
+            <h3>Research paper</h3>
+            <p>Technical manuscript describing the method, experiments, and results.</p>
+            <span class="card-disabled-link">Coming soon</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="about-panel">
+        <div class="about-orbit" aria-hidden="true">
+          <div class="orbit"></div>
+          <img src="assets/images/logo.png" alt="" class="about-logo">
+        </div>
+
+        <div class="about-copy">
+          <p class="eyebrow">About Habnetic</p>
+          <h2>Open research for uncertainty-aware urban decisions</h2>
+          <p>
+            Habnetic is an independent open-source research project developing Bayesian
+            methods for posterior decision stability and robust prioritisation under uncertainty.
+          </p>
+          <p>
+            Current work focuses on urban flood prioritisation, using Rotterdam as the baseline
+            case followed by cross-city transfer to Hamburg and Donostia.
+          </p>
+        </div>
+
+        <ul class="about-list">
+          <li>Bayesian inference with PyMC</li>
+          <li>Posterior predictive checks</li>
+          <li>Cross-city transfer</li>
+          <li>Open data and reproducible code</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div>
+      <h2>Contact</h2>
+      <p>Collaboration and research inquiries welcome.</p>
+      <p>
+        <a href="mailto:info@habnetic.org">info@habnetic.org</a><br>
+        <a href="https://github.com/Habnetic" target="_blank" rel="noopener noreferrer">GitHub Organization</a><br>
+        <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank" rel="noopener noreferrer">LinkedIn — Mikel Martínez</a>
+      </p>
     </div>
 
-    <h1>Bayesian modeling for resilient habitats<br>on Earth and beyond</h1>
-    <p class="vision">Building open tools for the probabilistic future of housing.</p>
-
-    <div class="cta">
-      <a class="btn" href="https://github.com/Habnetic/resilient-housing-bayes" target="_blank" rel="noopener noreferrer">Code</a>
-      <a class="btn btn-outline" href="https://github.com/Habnetic/docs" target="_blank" rel="noopener noreferrer">Docs</a>
+    <div>
+      <p>© 2026 Habnetic — Open research lab for posterior decision stability</p>
+      <p>Created by Mikel Martínez · Architect &amp; Data Strategist</p>
+      <p>
+        <a href="https://github.com/Habnetic" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+        <a href="mailto:info@habnetic.org">Email</a> ·
+        <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </p>
     </div>
-  </section>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>
-      <strong>Habnetic</strong> is an open research lab exploring probabilistic modeling for housing resilience and
-      adaptive habitat design.
-    </p>
-    <p>
-      The project develops Bayesian frameworks and simulation tools to understand how buildings and urban systems
-      behave under uncertainty — from climate risk to extraplanetary conditions.
-    </p>
-    <p>
-      All research, code, and data released under Habnetic are open-source, transparent, and reproducible.
-      The goal is to bridge architecture, data science, and statistical reasoning to build more resilient environments
-      — on Earth and beyond.
-    </p>
-  </section>
-
-  <section id="research">
-    <h2>Research</h2>
-    <p>
-      Habnetic develops Bayesian and stochastic frameworks to study resilience in housing and habitat systems.
-      It draws on open data from scientific and environmental institutions worldwide, integrating them
-      into transparent, reproducible models that help predict and adapt to uncertainty.
-    </p>
-    <p>
-      The project aims to make complex risk modeling accessible to designers, researchers, and policymakers
-      exploring resilient and adaptive habitats for Earth — and eventually beyond it.
-    </p>
-    <p>
-      <em>Current work focuses on building reproducible data pipelines and exposure proxies; probabilistic
-      inference layers are under active development.</em>
-    </p>
-
-    <ul class="bullets">
-      <li>Case progression: Rotterdam (Phase 0) → San Francisco (Phase I) → Concordia Station (Phase II) → Moon (Phase III) → Mars (Phase IV)</li>
-      <li>Outputs: fragility curves, downtime distributions, recovery cost scenarios</li>
-      <li>Methods: PyMC inference, posterior predictive checks, scenario simulation</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Collaboration and research inquiries welcome.</p>
-    <p>
-      <a href="mailto:info@habnetic.org">info@habnetic.org</a><br>
-      <a href="https://github.com/Habnetic" target="_blank" rel="noopener noreferrer">GitHub Organization</a><br>
-      <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank" rel="noopener noreferrer">
-        LinkedIn — Mikel Martínez
-      </a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2026 Habnetic — Open research lab for probabilistic habitat design</p>
-    <p class="creator">Created by Mikel Martínez · Architect &amp; Data Strategist</p>
-    <p class="footer-links">
-      <a href="https://github.com/Habnetic" target="_blank" rel="noopener noreferrer">GitHub</a> ·
-      <a href="mailto:info@habnetic.org">Email</a> ·
-      <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </p>
   </footer>
-
 </body>
 </html>
