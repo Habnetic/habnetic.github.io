@@ -169,15 +169,15 @@ p {
   background:
     linear-gradient(
       90deg,
-      rgba(11, 19, 43, 0.98) 0%,
-      rgba(11, 19, 43, 0.91) 34%,
-      rgba(11, 19, 43, 0.42) 70%,
-      rgba(11, 19, 43, 0.26) 100%
+      rgba(11, 19, 43, 0.92) 0%,
+      rgba(11, 19, 43, 0.80) 34%,
+      rgba(11, 19, 43, 0.34) 70%,
+      rgba(11, 19, 43, 0.18) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(11, 19, 43, 0.30),
-      rgba(9, 48, 58, 0.70)
+      rgba(11, 19, 43, 0.14),
+      rgba(9, 48, 58, 0.54)
     );
 }
 
@@ -216,38 +216,98 @@ p {
   z-index: 0;
 }
 
-.hero-visual img {
+.hero-map {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 70% center;
-  opacity: 0.68;
-  filter: saturate(1.02) contrast(1.02);
+  opacity: 0;
+  transform: scale(0.98);
+  filter: saturate(1.05) contrast(1.05);
+  transition:
+    opacity 1.4s ease,
+    transform 11s linear;
+}
+
+.hero-map.is-active {
+  opacity: 0.86;
+  transform: scale(1.07);
+}
+
+.hero-info-card {
+  position: absolute;
+  right: max(32px, calc((100vw - var(--max-width)) / 2));
+  bottom: 90px;
+  z-index: 2;
+  width: min(330px, calc(100vw - 64px));
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+  background: rgba(11, 19, 43, 0.92);
+  border: 1px solid rgba(249, 249, 249, 0.18);
+  border-radius: 18px;
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  opacity: 1;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.hero-info-card.is-fading {
+  opacity: 0;
+  transform: translateY(6px);
 }
 
 .hero-city-label {
-  position: absolute;
-  right: max(32px, calc((100vw - var(--max-width)) / 2));
-  bottom: 62px;
-  z-index: 2;
   display: grid;
-  gap: 3px;
-  padding: 14px 16px;
-  background: rgba(11, 19, 43, 0.78);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  backdrop-filter: blur(14px);
-  box-shadow: var(--shadow);
+  gap: 4px;
 }
 
 .hero-city-label strong {
   color: var(--white);
-  font-size: 0.98rem;
+  font-size: 1.05rem;
 }
 
 .hero-city-label span {
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
+}
+
+.hero-legend {
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(249, 249, 249, 0.11);
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: rgba(249, 249, 249, 0.72);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.10);
+}
+
+.legend-yellow {
+  background: #ffd84a;
+}
+
+.legend-orange {
+  background: #ff8c42;
+}
+
+.legend-grey {
+  background: #6a717a;
 }
 
 /* BUTTONS */
@@ -312,7 +372,7 @@ p {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  min-height: 145px;
+  min-height: 160px;
   padding: 24px;
   background: var(--panel);
   border: 1px solid rgba(249, 249, 249, 0.075);
@@ -337,8 +397,15 @@ p {
   font-size: clamp(1.65rem, 2.2vw, 2.45rem);
 }
 
+.finding h3 {
+  margin-bottom: 8px;
+  color: var(--white);
+  font-size: 1.02rem;
+  line-height: 1.15;
+}
+
 .finding p {
-  font-size: 0.98rem;
+  font-size: 0.95rem;
 }
 
 /* OUTPUT CARDS */
@@ -540,7 +607,8 @@ p {
 
   .orbit,
   .btn,
-  .card {
+  .card,
+  .hero-visual img {
     animation: none;
     transition: none;
   }
@@ -584,6 +652,10 @@ p {
   .about-orbit {
     justify-self: start;
   }
+
+  .hero-info-card {
+    right: 28px;
+  }
 }
 
 /* MOBILE */
@@ -618,7 +690,7 @@ p {
 
   .hero {
     min-height: 100vh;
-    padding: 118px 20px 58px;
+    padding: 108px 20px 48px;
     align-items: center;
   }
 
@@ -649,12 +721,15 @@ p {
     width: 100%;
   }
 
-  .hero-visual img {
+  .hero-map {
     object-position: 66% center;
-    opacity: 0.46;
   }
 
-  .hero-city-label {
+  .hero-map.is-active {
+    opacity: 0.58;
+  }
+
+  .hero-info-card {
     display: none;
   }
 
@@ -680,6 +755,10 @@ p {
 
   .finding h2 {
     font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .finding h3 {
+    font-size: 1rem;
   }
 
   .cards {

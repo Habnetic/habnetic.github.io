@@ -54,18 +54,49 @@
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="assets/docs/habnetic_demo.pdf">Explore demo</a>
+          <a class="btn btn-primary" href="assets/docs/habnetic_demo.pdf">Explore results</a>
           <a class="btn btn-secondary" href="assets/docs/habnetic_onepager.pdf">One-pager</a>
           <span class="btn btn-secondary btn-disabled">Paper coming soon</span>
         </div>
       </div>
 
       <div class="hero-visual" aria-label="Posterior top-k probability map">
-        <img src="assets/images/hero/rotterdam.png" alt="Rotterdam posterior top-k probability map">
-        <div class="hero-city-label">
-          <strong>Rotterdam</strong>
-          <span>221,324 buildings</span>
-          <span>Top-priority set: 1%</span>
+        <img
+          id="hero-map-a"
+          class="hero-map is-active"
+          src="assets/images/hero/rotterdam.png"
+          alt="Rotterdam posterior top-k probability map"
+        >
+        <img
+          id="hero-map-b"
+          class="hero-map"
+          src="assets/images/hero/hamburg.png"
+          alt=""
+          aria-hidden="true"
+        >
+
+        <div class="hero-info-card">
+          <div class="hero-city-label">
+            <strong id="hero-city">Rotterdam</strong>
+            <span id="hero-buildings">221,324 buildings</span>
+            <span id="hero-topk">Top-priority set: k = 2,213 · 1%</span>
+            <span id="hero-boundary">Uncertain boundary: 0.01%</span>
+          </div>
+
+          <div class="hero-legend" aria-label="Map legend">
+            <div class="legend-row">
+              <span class="legend-swatch legend-yellow"></span>
+              <span>High probability · inside top-k</span>
+            </div>
+            <div class="legend-row">
+              <span class="legend-swatch legend-orange"></span>
+              <span>Boundary uncertainty</span>
+            </div>
+            <div class="legend-row">
+              <span class="legend-swatch legend-grey"></span>
+              <span>Low probability · outside top-k</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -75,24 +106,33 @@
         <div class="finding finding-main">
           <span class="finding-icon">◎</span>
           <div>
-            <h2>Most prioritisation decisions remain stable.</h2>
-            <p>Decision uncertainty concentrates near a narrow posterior decision boundary.</p>
+            <h2>Most decisions are already stable.</h2>
+            <p>More than 99% of Rotterdam buildings lie outside the unstable boundary region.</p>
+          </div>
+        </div>
+
+        <div class="finding">
+          <span class="finding-icon">⌁</span>
+          <div>
+            <h3>Uncertainty has structure</h3>
+            <p>It concentrates near the prioritisation boundary, not across the whole city.</p>
           </div>
         </div>
 
         <div class="finding">
           <span class="finding-icon">⌕</span>
-          <p>Only boundary assets remain uncertain.</p>
-        </div>
-
-        <div class="finding">
-          <span class="finding-icon">⌗</span>
-          <p>Review only boundary decisions.</p>
+          <div>
+            <h3>Review boundary cases</h3>
+            <p>Focus expert review where posterior simulations disagree.</p>
+          </div>
         </div>
 
         <div class="finding">
           <span class="finding-icon">◈</span>
-          <p>Prioritise robust decisions.</p>
+          <div>
+            <h3>Prioritise robust decisions</h3>
+            <p>Separate consistently high-priority assets from uncertain candidates.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -184,5 +224,76 @@
       </p>
     </div>
   </footer>
+
+  <script>
+  const heroCities = [
+    {
+      city: "Rotterdam",
+      image: "assets/images/hero/rotterdam.png",
+      alt: "Rotterdam posterior top-k probability map",
+      buildings: "221,324 buildings",
+      topk: "Top-priority set: k = 2,213 · 1%",
+      boundary: "Boundary assets: 0.01%"
+    },
+    {
+      city: "Hamburg",
+      image: "assets/images/hero/hamburg.png",
+      alt: "Hamburg posterior top-k probability map",
+      buildings: "341,530 buildings",
+      topk: "Top-priority set: k = 3,415 · 1%",
+      boundary: "Boundary assets: 0.02%"
+    },
+    {
+      city: "Donostia",
+      image: "assets/images/hero/donostia.png",
+      alt: "Donostia posterior top-k probability map",
+      buildings: "7,755 buildings",
+      topk: "Top-priority set: k = 78 · 1%",
+      boundary: "Boundary assets: 0.17%"
+    }
+  ];
+  
+
+  const heroA = document.getElementById("hero-map-a");
+  const heroB = document.getElementById("hero-map-b");
+  const heroCard = document.querySelector(".hero-info-card");
+  const heroCity = document.getElementById("hero-city");
+  const heroBuildings = document.getElementById("hero-buildings");
+  const heroTopk = document.getElementById("hero-topk");
+  const heroBoundary = document.getElementById("hero-boundary");
+
+  let currentHero = 0;
+  let activeImage = heroA;
+  let inactiveImage = heroB;
+
+  function updateHero() {
+    currentHero = (currentHero + 1) % heroCities.length;
+    const next = heroCities[currentHero];
+
+    inactiveImage.src = next.image;
+    inactiveImage.alt = next.alt;
+
+    heroCard.classList.add("is-fading");
+
+    setTimeout(() => {
+      heroCity.textContent = next.city;
+      heroBuildings.textContent = next.buildings;
+      heroTopk.textContent = next.topk;
+      heroBoundary.textContent = next.boundary;
+
+      heroCard.classList.remove("is-fading");
+      
+    }, 450);
+
+    inactiveImage.classList.add("is-active");
+    activeImage.classList.remove("is-active");
+
+    const oldActive = activeImage;
+    activeImage = inactiveImage;
+    inactiveImage = oldActive;
+  }
+
+  setInterval(updateHero, 11000);
+</script>
 </body>
 </html>
