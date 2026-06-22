@@ -41,7 +41,7 @@
   <main id="main">
     <section id="home" class="hero">
       <div class="hero-content">
-        <p class="eyebrow">Posterior decision stability</p>
+        <p class="eyebrow">Open Bayesian research</p>
 
         <h1>
           Posterior decision stability for
@@ -49,12 +49,15 @@
         </h1>
 
         <p class="hero-subtitle">
-          Habnetic estimates which high-priority decisions remain reliable under uncertainty,
-          and where review should focus instead.
+          Habnetic identifies which prioritisation decisions remain reliable under uncertainty, and where additional review is actually needed.
+        </p>
+
+        <p class="hero-problem">
+          Urban risk prioritisation is often presented as a single fixed ranking. Habnetic estimates which decisions remain reliable once uncertainty is propagated through the model.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="assets/docs/habnetic_demo.pdf">Explore results</a>
+          <a class="btn btn-primary" href="assets/docs/habnetic_demo.pdf">Explore the demo</a>
           <a class="btn btn-secondary" href="assets/docs/habnetic_onepager.pdf">One-pager</a>
           <span class="btn btn-secondary btn-disabled">Paper coming soon</span>
         </div>
@@ -76,6 +79,8 @@
         >
 
         <div class="hero-info-card">
+          <p class="hero-card-label">Baseline case study</p>
+
           <div class="hero-city-label">
             <strong id="hero-city">Rotterdam</strong>
             <span id="hero-buildings">221,324 buildings</span>
@@ -106,32 +111,32 @@
         <div class="finding finding-main">
           <span class="finding-icon">◎</span>
           <div>
-            <h2>Most decisions are already stable.</h2>
-            <p>More than 99% of Rotterdam buildings lie outside the unstable boundary region.</p>
+            <h2>Most prioritisation decisions are already robust.</h2>
+            <p>In the Rotterdam reference case study, more than 99% of buildings remain consistently inside or outside the top-priority set despite uncertainty.</p>
           </div>
         </div>
 
         <div class="finding">
           <span class="finding-icon">⌁</span>
           <div>
-            <h3>Uncertainty has structure</h3>
-            <p>It concentrates near the prioritisation boundary, not across the whole city.</p>
+            <h3>Uncertainty concentrates near the decision boundary.</h3>
+            <p>Posterior uncertainty affects only a small subset of borderline assets rather than the entire city.</p>
           </div>
         </div>
 
         <div class="finding">
           <span class="finding-icon">⌕</span>
           <div>
-            <h3>Review boundary cases</h3>
-            <p>Focus expert review where posterior simulations disagree.</p>
+            <h3>Review only the uncertain cases.</h3>
+            <p>Focus expert review where posterior simulations disagree instead of revisiting every prioritisation decision.</p>
           </div>
         </div>
 
         <div class="finding">
           <span class="finding-icon">◈</span>
           <div>
-            <h3>Prioritise robust decisions</h3>
-            <p>Separate consistently high-priority assets from uncertain candidates.</p>
+            <h3>Prioritise with confidence.</h3>
+            <p>Separate consistently high-priority assets from uncertain candidates to support more reliable decision-making.</p>
           </div>
         </div>
       </div>
@@ -188,8 +193,7 @@
             methods for posterior decision stability and robust prioritisation under uncertainty.
           </p>
           <p>
-            Current case study focuses on urban flood prioritisation, using Rotterdam as the baseline
-            case followed by cross-city transfer to Hamburg and Donostia.
+            The current research validates the framework through urban flood prioritisation, using Rotterdam as the baseline case followed by cross-city transfer to Hamburg and Donostia-San Sebastián.
           </p>
         </div>
 
@@ -215,14 +219,20 @@
     </div>
 
     <div>
-      <p>© 2026 Habnetic — Open research lab for posterior decision stability</p>
-      <p>Created by Mikel Martínez Mugica · Independent Researcher</p>
-      <p>
-        <a href="https://github.com/Habnetic" target="_blank" rel="noopener noreferrer">GitHub</a> ·
-        <a href="mailto:info@habnetic.org">Email</a> ·
-        <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </p>
-    </div>
+  <p>© 2026 Habnetic — Open research lab for posterior decision stability</p>
+
+  <p>
+    Created by <strong>Mikel Martínez Mugica</strong><br>
+    Independent Researcher
+  </p>
+
+  <p>
+    <a href="https://orcid.org/0009-0006-5170-4405" target="_blank" rel="noopener noreferrer">ORCID</a> ·
+    <a href="https://github.com/Habnetic" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+    <a href="mailto:info@habnetic.org">Email</a> ·
+    <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+  </p>
+</div>
   </footer>
 
   <script>
@@ -244,9 +254,9 @@
         boundary: "Boundary assets: 0.02%"
       },
       {
-        city: "Donostia",
+        city: "Donostia-San Sebastián",
         image: "assets/images/hero/donostia.png",
-        alt: "Donostia posterior top-k probability map",
+        alt: "Donostia-San Sebastián posterior top-k probability map",
         buildings: "7,755 buildings",
         topk: "Top-priority set: k = 78 · 1%",
         boundary: "Boundary assets: 0.17%"
