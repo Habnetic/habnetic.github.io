@@ -1,84 +1,82 @@
 # 🪐 Habnetic Website
 
-Static website for the **Habnetic Open Research Lab**.  
-Live at https://habnetic.org
+Static website for the **Habnetic** open research project.
+
+🌐 **Live:** https://habnetic.org
 
 ---
 
-## 🧭 Purpose
+# Purpose
 
-This site serves as the public portal to Habnetic’s open research ecosystem — presenting its mission, research directions, and links to active projects, datasets, and documentation.
+This repository contains the source code for the Habnetic website, built with plain HTML, CSS, and minimal JavaScript and deployed through **GitHub Pages**.
 
-Habnetic focuses on **probabilistic modeling of housing and habitat resilience**, using Bayesian methods to study how built environments respond to hazard, uncertainty, and extreme conditions.
+The website presents Habnetic's research on **posterior decision stability** and **robust prioritisation under uncertainty**, together with publicly available documents, visualisations, and links to the project's open-source repositories.
 
-The research framework is explored through a progressive sequence of case studies, from data-rich Earth cities to speculative extraterrestrial habitats.
-
-The site is built using **GitHub Pages** with plain HTML, CSS, and minimal JavaScript for long-term transparency, reproducibility, and maintainability.
-
-Current content reflects ongoing work; results and visualizations evolve as pipelines mature.
+Current research focuses on **urban flood prioritisation**, using Rotterdam as the baseline case study followed by transfer experiments in Hamburg and Donostia-San Sebastián.
 
 ---
 
-## 🧩 Research Scope
+# Stewardship
 
-Habnetic research is structured around a staged progression of environments with increasing abstraction and uncertainty:
+Habnetic was founded and is currently stewarded by **Mikel Martínez Mugica**.
 
-- **Rotterdam – Phase 0**  
-  Data-rich Earth baseline (flood risk, governance, infrastructure)
-
-- **San Francisco – Phase I**  
-  Seismic hazard, market-driven housing, regulatory constraints
-
-- **Concordia Station (Antarctica) – Phase II**  
-  Isolated extreme habitat with tightly coupled systems
-
-- **Moon – Phase III**  
-  Fully engineered extraterrestrial habitat (hypothetical priors)
-
-- **Mars – Phase IV**  
-  Long-duration off-world settlement and recovery dynamics
-
-Each phase reuses the same underlying **generative structure** while progressively removing social, economic, and environmental buffers.
+Development takes place openly under permissive open-source licenses. Strategic direction, project governance, and the Habnetic identity currently remain under the stewardship of **Mikel Martínez Mugica**.
 
 ---
 
-## 🧩 Structure
+# Website structure
 
 ```
 habnetic.github.io/
-├── index.html → main landing page
-├── favicon.png → site icon
-├── logo.png → Habnetic visual mark
-└── assets/ → (optional) images, CSS, JS files
+├── index.html
+├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   └── docs/
+├── favicon.png
+└── README.md
 ```
+
 ---
 
-## 🔄 Deployment
+# Deployment
 
-The site auto-deploys from the `main` branch using **GitHub Pages**.
+The website is automatically deployed from the `main` branch using **GitHub Pages**.
 
-To update the live version:
+To publish updates:
 
 1. Commit changes to `main`
-2. Wait ~1 minute for GitHub Pages to rebuild
-3. Verify at https://habnetic.org
+2. Push to GitHub
+3. Wait approximately one minute for deployment
+4. Verify the live site at https://habnetic.org
 
 ---
 
-## 🧪 Related Repositories
+# Related repositories
 
-- **Resilient Housing Bayes**
-- **Habnetic Data**
-- **Habnetic Docs**
-
----
-
-## 📄 License
-
-Unless otherwise stated, the **code and written content** in this repository are licensed under the **MIT License** (see `LICENSE`).
-
-The **Habnetic name, logo, and visual identity** (including `logo.png` and related branding assets) are **not covered by the MIT License** and may not be used without permission.
+* resilient-housing-bayes
+* data
+* docs
 
 ---
 
-© 2026 Habnetic — Open Research for Resilient Futures
+# Links
+
+🌐 Website: https://habnetic.org
+
+🆔 ORCID: https://orcid.org/0009-0006-5170-4405
+
+📫 Email: [info@habnetic.org](mailto:info@habnetic.org)
+
+---
+
+# License
+
+Unless stated otherwise, the source code and written content in this repository are released under the **MIT License**.
+
+The **Habnetic** name, logo, visual identity, and branding assets are **not** covered by the MIT License and may not be reused without permission.
+
+---
+
+© 2026 Habnetic — Open research for posterior decision stability.
