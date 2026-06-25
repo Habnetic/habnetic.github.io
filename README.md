@@ -10,7 +10,7 @@ Static website for the **Habnetic** open research project.
 
 This repository contains the source code for the Habnetic website, built with plain HTML, CSS, and minimal JavaScript and deployed through **GitHub Pages**.
 
-The website presents Habnetic's research on **posterior decision stability** and **robust prioritisation under uncertainty**, together with publicly available documents, visualisations, and links to the project's open-source repositories.
+The website presents Habnetic's research on **prioritisation stability** and **robust prioritisation under uncertainty**, together with publicly available documents, visualisations, and links to the project's open-source repositories.
 
 Current research focuses on **urban flood prioritisation**, using Rotterdam as the baseline case study followed by transfer experiments in Hamburg and Donostia-San Sebastián.
 
@@ -79,4 +79,4 @@ The **Habnetic** name, logo, visual identity, and branding assets are **not** co
 
 ---
 
-© 2026 Habnetic — Open research for posterior decision stability.
+© 2026 Habnetic — Open research for prioritisation stability.

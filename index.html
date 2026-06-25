@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Habnetic</title>
 
-  <meta name="description" content="Habnetic is an independent open-source research project on posterior decision stability for robust, uncertainty-aware prioritisation.">
+  <meta name="description" content="Habnetic is an independent open-source research project on prioritisation stability for robust, uncertainty-aware prioritisation.">
   <link rel="canonical" href="https://habnetic.org/">
 
   <meta property="og:title" content="Habnetic">
-  <meta property="og:description" content="Posterior decision stability for robust prioritisation.">
+  <meta property="og:description" content="prioritisation stability for robust prioritisation.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://habnetic.org/">
   <meta property="og:image" content="https://habnetic.org/assets/images/og-image.png">
@@ -45,7 +45,7 @@
         <p class="eyebrow">Open Bayesian research</p>
 
         <h1>
-          Posterior decision stability for
+          prioritisation stability for
           <span>robust prioritisation.</span>
         </h1>
 
@@ -86,7 +86,7 @@
             <strong id="hero-city">Rotterdam</strong>
             <span id="hero-buildings">221,324 buildings</span>
             <span id="hero-topk">Top-priority set: k = 2,213 · 1%</span>
-            <span id="hero-boundary">Boundary assets: 0.01%</span>
+            <span id="hero-boundary">Unstable boundary assets: 0.01%</span>
           </div>
 
           <div class="hero-legend" aria-label="Map legend">
@@ -120,7 +120,7 @@
         <div class="finding">
           <span class="finding-icon">⌁</span>
           <div>
-            <h3>Uncertainty concentrates near the decision boundary.</h3>
+            <h3>Uncertainty concentrates near the prioritisation boundary.</h3>
             <p>Posterior uncertainty affects only a small subset of borderline assets rather than the entire city.</p>
           </div>
         </div>
@@ -163,7 +163,7 @@
           <img src="assets/images/cards/demo-preview.png" alt="Demo preview">
           <div class="card-body">
             <h3>Demo</h3>
-            <p>A compact walkthrough of posterior decision stability across cities.</p>
+            <p>A compact walkthrough of prioritisation stability across cities.</p>
             <a href="assets/docs/habnetic_demo.pdf">Launch demo →</a>
           </div>
         </article>
@@ -191,10 +191,10 @@
           <h2>Open research for uncertainty-aware urban decisions</h2>
           <p>
             Habnetic is an independent open-source research project developing Bayesian
-            methods for posterior decision stability and robust prioritisation under uncertainty.
+            methods for prioritisation stability and robust prioritisation under uncertainty.
           </p>
           <p>
-            The current research validates the framework through urban flood prioritisation, using Rotterdam as the baseline case followed by cross-city transfer to Hamburg and Donostia-San Sebastián.
+            The current research evaluates the framework through urban flood prioritisation, using Rotterdam as the baseline case followed by cross-city transfer to Hamburg and Donostia-San Sebastián.
           </p>
         </div>
 
@@ -220,7 +220,7 @@
     </div>
 
     <div>
-  <p>© 2026 Habnetic — Open research lab for posterior decision stability</p>
+  <p>© 2026 Habnetic — Open research lab for prioritisation stability</p>
 
   <p>
     Created by <strong>Mikel Martínez Mugica</strong><br>
@@ -244,7 +244,7 @@
         alt: "Rotterdam posterior top-k probability map",
         buildings: "221,324 buildings",
         topk: "Top-priority set: k = 2,213 · 1%",
-        boundary: "Boundary assets: 0.01%"
+        boundary: "Unstable boundary assets: 0.01%"
       },
       {
         city: "Hamburg",
@@ -252,7 +252,7 @@
         alt: "Hamburg posterior top-k probability map",
         buildings: "341,530 buildings",
         topk: "Top-priority set: k = 3,415 · 1%",
-        boundary: "Boundary assets: 0.02%"
+        boundary: "Unstable boundary assets: 0.02%"
       },
       {
         city: "Donostia-San Sebastián",
