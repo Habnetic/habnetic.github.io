@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Applications | Habnetic — Decision stability under uncertainty</title>
+<meta content="Explore how Habnetic's research on uncertainty and decision stability could inform urban risk prioritisation, planning and resilience assessment." name="description"/>
+<link href="https://habnetic.org/applications/" rel="canonical"/>
+<meta content="Applications | Habnetic" property="og:title"/>
+<meta content="Are your priorities stable under uncertainty? Explore potential applications of posterior decision-stability analysis." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://habnetic.org/applications/" property="og:url"/>
+<meta content="https://habnetic.org/assets/images/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/assets/images/favicon.png" rel="icon" type="image/png"/>
+<link href="/styles.css" rel="stylesheet"/>
+<meta content="en_GB" property="og:locale"/><link href="https://habnetic.org/applications/" hreflang="en" rel="alternate"/><link href="https://habnetic.org/de/applications/" hreflang="de-CH" rel="alternate"/><link href="https://habnetic.org/es/applications/" hreflang="es" rel="alternate"/><link href="https://habnetic.org/eu/applications/" hreflang="eu" rel="alternate"/><link href="https://habnetic.org/applications/" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<a aria-label="Habnetic research home" class="brand" href="/">
+<img alt="" class="brand-logo" src="/assets/images/logo.png"/>
+<span>Habnetic</span>
+</a>
+<nav aria-label="Primary navigation" class="site-nav">
+<a href="/">Research</a>
+<a href="/#findings">Findings</a>
+<a aria-current="page" href="/applications/">Applications</a>
+<a href="/#outputs">Outputs</a>
+<a href="/#about">About</a>
+<a href="/#contact">Contact</a>
+</nav>
+<!-- Language selector: English available; do not link to unpublished translations.
+         Future routes for this page:
+         DE: /de/applications/
+         ES: /es/applications/
+         EU: /eu/applications/
+         Once translated pages exist, replace their disabled spans with <a href="...">.
+         Add reciprocal hreflang tags only when the corresponding URLs are live. -->
+<details class="language-menu">
+<summary aria-label="Choose language. Current language: English">
+<svg aria-hidden="true" class="language-menu-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+<span>EN</span>
+<svg aria-hidden="true" class="language-menu-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</summary>
+<div aria-label="Available languages" class="language-menu-panel">
+<a aria-current="page" href="/applications/" hreflang="en" lang="en">English <span class="language-menu-code">EN</span></a> <a href="/de/applications/" hreflang="de-CH" lang="de-CH">Deutsch (CH) <span class="language-menu-code">DE</span></a> <a href="/es/applications/" hreflang="es" lang="es">Español <span class="language-menu-code">ES</span></a> <a href="/eu/applications/" hreflang="eu" lang="eu">Euskara <span class="language-menu-code">EU</span></a>
+</div>
+</details>
+</header>
+<main id="main">
+<section aria-labelledby="applications-title" class="application-hero">
+<div class="application-hero-copy">
+<p class="eyebrow">From research to practice</p>
+<h1 id="applications-title">Are your priorities stable <span>under uncertainty?</span></h1>
+<p class="lede">When resources are limited, deciding where to act is as important as estimating risk.</p>
+<p>Municipalities, planning authorities and risk specialists regularly prioritise assets for further assessment or intervention. A conventional ranking shows which assets appear most at risk, but not necessarily how sensitive the selection is to uncertainty.</p>
+<p>Habnetic investigates a complementary question: <strong>which assets remain priorities across posterior model outcomes, and which may move in or out of the selected set?</strong></p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#collaborate">Explore a research collaboration</a>
+<a class="btn btn-secondary" href="/#findings">Explore research findings</a>
+</div>
+</div>
+<aside aria-label="An example from the Donostia research experiment" class="app-hero-stat">
+<p class="eyebrow">Experimental example · Donostia</p>
+<span class="stat-number">13</span>
+<p class="stat-title">assets in the uncertain selection boundary</p>
+<p class="stat-secondary"><strong style="color:var(--white)">16.67%</strong> of prioritisation capacity, despite representing only 0.1676% of the assessed buildings.</p>
+<p class="stat-small">At approximately 1% prioritisation capacity. Model-based membership uncertainty, not observed flood damage.</p>
+</aside>
+</section>
+<section aria-labelledby="problem-title" class="section" id="problem">
+<div class="app-section-heading">
+<p class="eyebrow">The decision problem</p>
+<h2 id="problem-title">A ranking is not the whole decision</h2>
+<p>Consider a municipality with thousands of buildings, but resources to investigate only a small proportion. A risk model produces a ranking and a selection is made. What happens when the underlying estimates are uncertain?</p>
+</div>
+<div class="app-grid-3">
+<article class="app-card">
+<p class="card-kicker">01 · Estimate</p>
+<h3>Model the risk</h3>
+<p>Available indicators and model assumptions generate estimates that are subject to uncertainty.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">02 · Select</p>
+<h3>Choose a priority set</h3>
+<p>Limited capacity turns a continuous ranking into a discrete choice: inside or outside the selected set.</p>
+</article>
+<article class="app-card emphasis">
+<p class="card-kicker">03 · Question</p>
+<h3>Would the selection change?</h3>
+<p>Some assets remain consistently selected. Others may change status as model parameters vary.</p>
+</article>
+</div>
+<p class="app-note">Decision-stability analysis makes this last distinction visible. It does not, by itself, establish whether a priority ranking is empirically correct.</p>
+</section>
+<section aria-labelledby="method-title" class="section" id="method">
+<div class="app-section-heading">
+<p class="eyebrow">What Habnetic investigates</p>
+<h2 id="method-title">From uncertain estimates to decision stability</h2>
+<p>Instead of selecting assets once from a single ranking, the research ranks and selects the top <em>k</em> assets for each posterior model draw. The proportion of draws in which an asset is selected estimates its posterior top-k membership probability.</p>
+</div>
+<div class="app-grid-3">
+<article class="app-card">
+<p class="card-kicker">High membership</p>
+<h3>Consistently selected</h3>
+<p>Assets with a posterior top-k inclusion probability of at least 0.8 under the paper's primary classification convention.</p>
+</article>
+<article class="app-card emphasis">
+<p class="card-kicker">Intermediate membership</p>
+<h3>Uncertain selection</h3>
+<p>Assets with inclusion probabilities between 0.2 and 0.8. These constitute the uncertain decision boundary.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Low membership</p>
+<h3>Consistently excluded</h3>
+<p>Assets with inclusion probabilities of at most 0.2 under the same classification convention.</p>
+</article>
+</div>
+<p class="app-note">These classification thresholds are analytical choices, and their sensitivity is assessed in the paper. Membership probabilities are conditional on the model and data. They are <strong>not</strong> probabilities of flooding or physical damage.</p>
+</section>
+<section aria-labelledby="evidence-title" class="section" id="evidence">
+<div class="app-section-heading">
+<p class="eyebrow">Research evidence</p>
+<h2 id="evidence-title">Three cities, one experimental specification</h2>
+<p>The current experiments cover a Rotterdam baseline, controlled hazard-proxy perturbations and independent applications of the same specification in Hamburg and Donostia–San Sebastián.</p>
+</div>
+<div class="app-grid-3 app-evidence-cities">
+<article class="app-card">
+<p class="card-kicker">Rotterdam</p>
+<p class="card-stat">30 assets</p>
+<h3>A narrow membership boundary</h3>
+<p>At approximately 1% prioritisation capacity, only 30 of 221,324 buildings fall within the uncertain top-k membership category. A separate perturbation experiment involving 50,000 assets shows limited broadening of this boundary under the tested conditions.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Hamburg</p>
+<p class="card-stat">56 assets</p>
+<h3>Fixed-specification stress test</h3>
+<p>At comparable prioritisation capacity, 56 of 341,530 buildings fall within the uncertain membership category. The model was fitted independently using the same specification and Rotterdam-based reference scaling.</p>
+</article>
+<article class="app-card emphasis">
+<p class="card-kicker">Donostia–San Sebastián</p>
+<p class="card-stat">13 assets</p>
+<h3>Capacity gives the count context</h3>
+<p>Only 13 of 7,755 buildings fall within the uncertain membership category. However, this represents 16.67% of the prioritisation capacity (k = 78), compared with just 1.36% in Rotterdam and 1.64% in Hamburg.</p>
+</article>
+</div>
+<p class="app-note app-evidence-note"><strong>Research note:</strong> Uncertain membership refers to posterior top-k inclusion probabilities strictly between 0.2 and 0.8 under the tested model. It does not represent uncertainty in observed flood damage.</p>
+<div class="research-images">
+<figure class="research-figure">
+<img alt="Experimental Donostia citywide building map showing posterior top-k membership probabilities, with blue low-membership and yellow high-membership regions" height="1000" loading="lazy" src="/assets/images/applications/DON_paper_citywide_topk_map.png" width="1000"/>
+<figcaption><strong>Donostia: citywide view.</strong> Experimental posterior top-k membership probabilities across assessed buildings.</figcaption>
+</figure>
+<figure class="research-figure">
+<img alt="Close-up of Donostia buildings showing yellow and blue posterior top-k membership categories near a local transition" height="1000" loading="lazy" src="/assets/images/applications/DON_paper_boundary_zoom_map.png" width="1000"/>
+<figcaption><strong>Donostia: local transition.</strong> An enlarged view near a priority-set membership boundary.</figcaption>
+</figure>
+</div>
+<p class="app-note">The maps visualise model-derived selection membership, not observed flood damage or validated hydraulic risk. See the <a class="app-inline-link" href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">published research preprint</a> for methods and experimental limitations.</p>
+</section>
+<section aria-labelledby="usecases-title" class="section" id="use-cases">
+<div class="app-section-heading">
+<p class="eyebrow">Potential applications</p>
+<h2 id="usecases-title">Where could decision-stability analysis be useful?</h2>
+<p>These are possible research and pilot contexts, not operationally validated services. Feasibility depends on available evidence, the decision rule and the organisation's own requirements.</p>
+</div>
+<div class="app-usecases">
+<article class="app-card">
+<p class="card-kicker">Planning</p>
+<h3>Urban and regional planning</h3>
+<p>Investigating whether buildings or areas remain priorities when quantitative indicators and modelling assumptions are uncertain.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Resilience</p>
+<h3>Flood-risk and resilience assessment</h3>
+<p>Studying the stability of selections derived from existing risk models and identifying cases that may merit closer technical review.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Asset portfolios</p>
+<h3>Infrastructure and asset management</h3>
+<p>Exploring how uncertainty affects fixed-capacity inspection or assessment priorities across large portfolios.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Advisory work</p>
+<h3>Engineering and environmental consultancy</h3>
+<p>Examining sensitivity in selected priorities as a possible complement to deterministic ranking approaches.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="limits-title" class="section" id="limitations">
+<div class="app-section-heading">
+<p class="eyebrow">Research maturity</p>
+<h2 id="limits-title">What has been tested, and what remains open?</h2>
+<p>Habnetic is independent open-source research. Its existing results concern the behaviour of selection decisions under a deliberately simplified statistical model.</p>
+</div>
+<div class="app-limits">
+<article>
+<h3>Demonstrated experimentally</h3>
+<ul>
+<li>Posterior top-k membership probabilities and decision-stability classes.</li>
+<li>Controlled perturbations of the hazard proxy.</li>
+<li>Fixed-specification cross-city stress testing with independent city fits.</li>
+<li>Open research code and reproducible experimental inputs.</li>
+</ul>
+</article>
+<article>
+<h3>Further validation needed</h3>
+<ul>
+<li>Evaluation with observed flood impacts or losses.</li>
+<li>Validation of appropriate hydraulic, exposure and vulnerability models.</li>
+<li>Broader prior and model-sensitivity assessment.</li>
+<li>Testing within actual planning and prioritisation workflows.</li>
+</ul>
+</article>
+</div>
+<p class="app-disclaimer">Current experiments use simplified exposure and hazard proxies and synthetic binary outcomes. They do not validate building-level flood-loss predictions, establish the empirical correctness of selected priorities or constitute an operational flood-risk product.</p>
+</section>
+<section aria-labelledby="collaborate-title" class="section" id="collaborate">
+<div class="app-collaboration">
+<p class="eyebrow">Explore a research collaboration</p>
+<h2 id="collaborate-title">Could this approach be relevant to your decisions?</h2>
+<p>Habnetic is interested in speaking with municipalities, planning professionals, flood-risk specialists, engineering consultancies and research organisations.</p>
+<p>We are especially interested in how organisations currently prioritise assets, how uncertainty is handled, and what data and validation would be needed to evaluate posterior decision-stability analysis for a specific use case.</p>
+<a class="btn btn-primary" href="mailto:info@habnetic.org?subject=Habnetic%20research%20collaboration">Contact Habnetic <span aria-hidden="true">→</span></a>
+<div aria-label="Scientific resources" class="app-resources">
+<a href="/">Research homepage ↗</a>
+<a href="/assets/docs/habnetic_demo.pdf">View demo PDF ↗</a>
+<a href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Published preprint ↗</a>
+<a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">Open-source repositories ↗</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer" id="contact">
+<div>
+<h2>Contact</h2>
+<p>Scientific collaboration and research enquiries are welcome.</p>
+<p>
+<a href="mailto:info@habnetic.org">info@habnetic.org</a><br/>
+<a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub Organization</a><br/>
+<a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn — Mikel Martínez Mugica</a>
+</p>
+</div>
+<div>
+<p>© 2026 Habnetic — Open research on decision stability under uncertainty</p>
+<p>Created by <strong>Mikel Martínez Mugica</strong><br/>Independent Researcher</p>
+<p>
+<a href="https://orcid.org/0009-0006-5170-4405" rel="noopener noreferrer" target="_blank">ORCID</a> ·
+        <a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub</a> ·
+        <a href="mailto:info@habnetic.org">Email</a> ·
+        <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</p>
+</div>
+</footer>
+</body>
+</html>
+

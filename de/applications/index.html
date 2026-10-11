@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="de-CH">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Anwendungen | Habnetic — Entscheidungsstabilität unter Unsicherheit</title>
+<meta content="Entdecken Sie, wie Habnetics Forschung zur Entscheidungsstabilität städtische Risiko-Priorisierung, Planung und Resilienzbewertung ergänzen könnte." name="description"/>
+<link href="https://habnetic.org/de/applications/" rel="canonical"/>
+<meta content="Anwendungen | Habnetic" property="og:title"/>
+<meta content="Sind Ihre Prioritäten unter Unsicherheit stabil? Mögliche Anwendungen posteriorer Entscheidungsstabilität." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://habnetic.org/de/applications/" property="og:url"/>
+<meta content="https://habnetic.org/assets/images/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/assets/images/favicon.png" rel="icon" type="image/png"/>
+<link href="/styles.css" rel="stylesheet"/>
+<meta content="de_CH" property="og:locale"/><link href="https://habnetic.org/applications/" hreflang="en" rel="alternate"/><link href="https://habnetic.org/de/applications/" hreflang="de-CH" rel="alternate"/><link href="https://habnetic.org/es/applications/" hreflang="es" rel="alternate"/><link href="https://habnetic.org/eu/applications/" hreflang="eu" rel="alternate"/><link href="https://habnetic.org/applications/" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+<a aria-label="Habnetic – Startseite Forschung" class="brand" href="/de/">
+<img alt="" class="brand-logo" src="/assets/images/logo.png"/>
+<span>Habnetic</span>
+</a>
+<nav aria-label="Hauptnavigation" class="site-nav">
+<a href="/de/">Forschung</a>
+<a href="/de/#findings">Ergebnisse</a>
+<a aria-current="page" href="/de/applications/">Anwendungen</a>
+<a href="/de/#outputs">Publikationen</a>
+<a href="/de/#about">Über uns</a>
+<a href="/de/#contact">Kontakt</a>
+</nav>
+<!-- Language selector: English available; do not link to unpublished translations.
+         Future routes for this page:
+         DE: /de/applications/
+         ES: /es/applications/
+         EU: /eu/applications/
+         Once translated pages exist, replace their disabled spans with <a href="...">.
+         Add reciprocal hreflang tags only when the corresponding URLs are live. -->
+<details class="language-menu">
+<summary aria-label="Sprache auswählen. Aktuelle Sprache: Deutsch (Schweiz)">
+<svg aria-hidden="true" class="language-menu-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+<span>DE</span>
+<svg aria-hidden="true" class="language-menu-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</summary>
+<div aria-label="Verfügbare Sprachen" class="language-menu-panel">
+<a href="/applications/" hreflang="en" lang="en">English <span class="language-menu-code">EN</span></a> <a aria-current="page" href="/de/applications/" hreflang="de-CH" lang="de-CH">Deutsch (CH) <span class="language-menu-code">DE</span></a> <a href="/es/applications/" hreflang="es" lang="es">Español <span class="language-menu-code">ES</span></a> <a href="/eu/applications/" hreflang="eu" lang="eu">Euskara <span class="language-menu-code">EU</span></a>
+</div>
+</details>
+</header>
+<main id="main">
+<section aria-labelledby="applications-title" class="application-hero">
+<div class="application-hero-copy">
+<p class="eyebrow">Von der Forschung zur Praxis</p>
+<h1 id="applications-title">Sind Ihre Prioritäten stabil <span>unter Unsicherheit?</span></h1>
+<p class="lede">Wenn die Mittel begrenzt sind, ist die Entscheidung, wo gehandelt wird, genauso wichtig wie die Risikoschätzung.</p>
+<p>Gemeinden, Planungsbehörden und Risikofachleute müssen regelmässig Objekte für weitere Untersuchungen oder Massnahmen priorisieren. Eine herkömmliche Rangfolge zeigt, welche Objekte am stärksten gefährdet erscheinen, aber nicht unbedingt, wie empfindlich die Auswahl auf Unsicherheit reagiert.</p>
+<p>Habnetic untersucht eine ergänzende Frage: <strong>Welche Objekte bleiben über Ziehungen aus der Posteriorverteilung hinweg priorisiert und welche könnten in die Auswahl hinein- oder aus ihr herausfallen?</strong></p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="#collaborate">Forschungszusammenarbeit prüfen</a>
+<a class="btn btn-secondary" href="/de/#findings">Forschungsergebnisse entdecken</a>
+</div>
+</div>
+<aside aria-label="Experimentelles Beispiel aus Donostia" class="app-hero-stat">
+<p class="eyebrow">Experimentelles Beispiel · Donostia</p>
+<span class="stat-number">13</span>
+<p class="stat-title">Objekte im unsicheren Auswahlbereich</p>
+<p class="stat-secondary"><strong style="color:var(--white)">16,67 %</strong> der Priorisierungskapazität, obwohl dies nur 0,1676 % der untersuchten Gebäude sind.</p>
+<p class="stat-small">Bei einer Priorisierungskapazität von rund 1 %. Modellbasierte Unsicherheit der Zugehörigkeit, keine beobachteten Hochwasserschäden.</p>
+</aside>
+</section>
+<section aria-labelledby="problem-title" class="section" id="problem">
+<div class="app-section-heading">
+<p class="eyebrow">Das Entscheidungsproblem</p>
+<h2 id="problem-title">Eine Rangliste ist noch kein vollständiger Entscheid</h2>
+<p>Stellen Sie sich eine Gemeinde mit Tausenden von Gebäuden vor, deren Mittel nur die Prüfung eines kleinen Teils erlauben. Ein Risikomodell erstellt eine Rangfolge und daraus entsteht eine Auswahl. Was geschieht, wenn die zugrunde liegenden Schätzungen unsicher sind?</p>
+</div>
+<div class="app-grid-3">
+<article class="app-card">
+<p class="card-kicker">01 · Schätzen</p>
+<h3>Risiko modellieren</h3>
+<p>Verfügbare Indikatoren und Modellannahmen führen zu Schätzungen, die mit Unsicherheit behaftet sind.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">02 · Auswählen</p>
+<h3>Prioritätenmenge bestimmen</h3>
+<p>Begrenzte Kapazität verwandelt eine kontinuierliche Rangfolge in eine diskrete Wahl: innerhalb oder ausserhalb der ausgewählten Menge.</p>
+</article>
+<article class="app-card emphasis">
+<p class="card-kicker">03 · Hinterfragen</p>
+<h3>Würde sich die Auswahl ändern?</h3>
+<p>Manche Objekte bleiben konsistent ausgewählt. Andere können ihren Status ändern, wenn Modellparameter variieren.</p>
+</article>
+</div>
+<p class="app-note">Die Analyse der Entscheidungsstabilität macht diesen Unterschied sichtbar. Sie belegt für sich genommen nicht, dass eine Prioritätenliste empirisch richtig ist.</p>
+</section>
+<section aria-labelledby="method-title" class="section" id="method">
+<div class="app-section-heading">
+<p class="eyebrow">Was Habnetic untersucht</p>
+<h2 id="method-title">Von unsicheren Schätzungen zur Entscheidungsstabilität</h2>
+<p>Statt einmalig anhand einer einzigen Rangfolge auszuwählen, ordnet die Forschung die Objekte für jede Ziehung aus der Posteriorverteilung und wählt die obersten <em>k</em> aus. Der Anteil der Ziehungen, in denen ein Objekt ausgewählt wird, schätzt dessen posteriore Top-k-Zugehörigkeitswahrscheinlichkeit.</p>
+</div>
+<div class="app-grid-3">
+<article class="app-card">
+<p class="card-kicker">Hohe Zugehörigkeitswahrscheinlichkeit</p>
+<h3>Konsistent ausgewählt</h3>
+<p>Objekte mit einer posterioren Top-k-Zugehörigkeitswahrscheinlichkeit von mindestens 0,8 nach der primären Klassifikationskonvention der Studie.</p>
+</article>
+<article class="app-card emphasis">
+<p class="card-kicker">Mittlere Zugehörigkeitswahrscheinlichkeit</p>
+<h3>Unsichere Auswahl</h3>
+<p>Objekte mit Zugehörigkeitswahrscheinlichkeiten zwischen 0,2 und 0,8. Sie bilden den unsicheren Entscheidungsbereich.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Geringe Zugehörigkeitswahrscheinlichkeit</p>
+<h3>Konsistent ausgeschlossen</h3>
+<p>Objekte mit einer Zugehörigkeitswahrscheinlichkeit von höchstens 0,2 nach derselben Klassifikationskonvention.</p>
+</article>
+</div>
+<p class="app-note">Diese Klassifikationsgrenzen sind analytische Festlegungen; die Studie untersucht ihre Sensitivität. Zugehörigkeitswahrscheinlichkeiten gelten bedingt auf Modell und Daten. Es sind <strong>keine</strong> Wahrscheinlichkeiten für Überschwemmungen oder physische Schäden.</p>
+</section>
+<section aria-labelledby="evidence-title" class="section" id="evidence">
+<div class="app-section-heading">
+<p class="eyebrow">Forschungsergebnisse</p>
+<h2 id="evidence-title">Drei Städte, eine experimentelle Spezifikation</h2>
+<p>Die aktuellen Experimente umfassen den Rotterdamer Referenzfall, kontrollierte Störungen des Gefährdungsindikators und unabhängige Anwendungen derselben Spezifikation in Hamburg und Donostia–San Sebastián.</p>
+</div>
+<div class="app-grid-3 app-evidence-cities">
+<article class="app-card">
+<p class="card-kicker">Rotterdam</p>
+<p class="card-stat">30 Objekte</p>
+<h3>Ein schmaler Bereich unsicherer Zugehörigkeit</h3>
+<p>Bei einer Priorisierungskapazität von rund 1 % gehören nur 30 von 221'324 Gebäuden zur Kategorie unsicherer Top-k-Zugehörigkeit. Ein separates Störungsexperiment mit 50'000 Objekten zeigt unter den geprüften Bedingungen nur eine geringe Verbreiterung dieses Bereichs.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Hamburg</p>
+<p class="card-stat">56 Objekte</p>
+<h3>Belastungstest mit fester Spezifikation</h3>
+<p>Bei vergleichbarer Priorisierungskapazität fallen 56 von 341'530 Gebäuden in die Kategorie unsicherer Zugehörigkeit. Das Modell wurde unabhängig mit derselben Spezifikation und der Rotterdamer Referenzskalierung angepasst.</p>
+</article>
+<article class="app-card emphasis">
+<p class="card-kicker">Donostia–San Sebastián</p>
+<p class="card-stat">13 Objekte</p>
+<h3>Die Kapazität setzt die Zahl in Relation</h3>
+<p>Nur 13 von 7'755 Gebäuden fallen in die Kategorie unsicherer Zugehörigkeit. Dies entspricht jedoch 16,67 % der Priorisierungskapazität (k = 78), gegenüber lediglich 1,36 % in Rotterdam und 1,64 % in Hamburg.</p>
+</article>
+</div>
+<p class="app-note app-evidence-note"><strong>Hinweis zur Forschung:</strong> Unsichere Zugehörigkeit bezeichnet im untersuchten Modell posteriore Top-k-Zugehörigkeitswahrscheinlichkeiten, die strikt zwischen 0,2 und 0,8 liegen. Sie sagt nichts über die Unsicherheit beobachteter Hochwasserschäden aus.</p>
+<div class="research-images">
+<figure class="research-figure">
+<img alt="Experimentelle Karte von Donostia mit posterioren Top-k-Zugehörigkeitswahrscheinlichkeiten. Blaue Gebäude haben eine geringe und gelbe eine hohe Zugehörigkeitswahrscheinlichkeit." height="1000" loading="lazy" src="/assets/images/applications/DON_paper_citywide_topk_map.png" width="1000"/>
+<figcaption><strong>Donostia: Gesamtstadt.</strong> Experimentelle posteriore Top-k-Zugehörigkeitswahrscheinlichkeiten für die untersuchten Gebäude.</figcaption>
+</figure>
+<figure class="research-figure">
+<img alt="Detailkarte von Donostia mit blau und gelb markierten Gebäuden nahe dem lokalen Übergang der Top-k-Zugehörigkeit." height="1000" loading="lazy" src="/assets/images/applications/DON_paper_boundary_zoom_map.png" width="1000"/>
+<figcaption><strong>Donostia: Lokaler Übergang.</strong> Vergrösserte Ansicht nahe einem Übergang in der Zugehörigkeit zur Prioritätenmenge.</figcaption>
+</figure>
+</div>
+<p class="app-note">Die Karten zeigen modellbasierte Auswahlzugehörigkeit, nicht beobachtete Hochwasserschäden oder validierte hydraulische Risiken. Die <a class="app-inline-link" href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">veröffentlichte Forschungsarbeit (Preprint)</a> enthält Methoden und experimentelle Einschränkungen.</p>
+</section>
+<section aria-labelledby="usecases-title" class="section" id="use-cases">
+<div class="app-section-heading">
+<p class="eyebrow">Mögliche Anwendungen</p>
+<h2 id="usecases-title">Wo könnte die Analyse der Entscheidungsstabilität nützlich sein?</h2>
+<p>Dies sind mögliche Forschungs- und Pilotkontexte, keine für den Betrieb validierten Dienstleistungen. Die Machbarkeit hängt von verfügbaren Daten, der Entscheidungsregel und den Anforderungen der Organisation ab.</p>
+</div>
+<div class="app-usecases">
+<article class="app-card">
+<p class="card-kicker">Planung</p>
+<h3>Stadt- und Regionalplanung</h3>
+<p>Untersuchen, ob Gebäude oder Gebiete prioritär bleiben, wenn quantitative Indikatoren und Modellannahmen unsicher sind.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Resilienz</p>
+<h3>Hochwasserrisiko- und Resilienzbewertung</h3>
+<p>Die Stabilität von Auswahlen aus bestehenden Risikomodellen untersuchen und Fälle identifizieren, die eine vertiefte fachliche Prüfung verdienen könnten.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Objektportfolios</p>
+<h3>Infrastruktur- und Anlagenmanagement</h3>
+<p>Erkunden, wie Unsicherheit Inspektions- oder Prüfprioritäten mit fester Kapazität in grossen Portfolios beeinflusst.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Beratung</p>
+<h3>Ingenieur- und Umweltberatung</h3>
+<p>Die Sensitivität ausgewählter Prioritäten als mögliche Ergänzung zu deterministischen Rangfolgen untersuchen.</p>
+</article>
+</div>
+</section>
+<section aria-labelledby="limits-title" class="section" id="limitations">
+<div class="app-section-heading">
+<p class="eyebrow">Forschungsstand</p>
+<h2 id="limits-title">Was wurde getestet und was bleibt offen?</h2>
+<p>Habnetic ist unabhängige Open-Source-Forschung. Die bisherigen Ergebnisse betreffen das Verhalten von Auswahlentscheiden unter einem bewusst vereinfachten statistischen Modell.</p>
+</div>
+<div class="app-limits">
+<article>
+<h3>Experimentell nachgewiesen</h3>
+<ul>
+<li>Posteriore Top-k-Zugehörigkeitswahrscheinlichkeiten und Klassen der Entscheidungsstabilität.</li>
+<li>Kontrollierte Störungen des Gefährdungsindikators.</li>
+<li>Städteübergreifende Belastungstests mit fester Spezifikation und unabhängigen Modellanpassungen.</li>
+<li>Offener Forschungscode und reproduzierbare experimentelle Eingabedaten.</li>
+</ul>
+</article>
+<article>
+<h3>Weitere Validierung erforderlich</h3>
+<ul>
+<li>Prüfung anhand beobachteter Hochwasserauswirkungen oder Schäden.</li>
+<li>Validierung geeigneter hydraulischer, Expositions- und Vulnerabilitätsmodelle.</li>
+<li>Umfassendere Sensitivitätsprüfungen für Priors und Modellannahmen.</li>
+<li>Erprobung in tatsächlichen Planungs- und Priorisierungsabläufen.</li>
+</ul>
+</article>
+</div>
+<p class="app-disclaimer">Die aktuellen Experimente verwenden vereinfachte Expositions- und Gefährdungsindikatoren sowie synthetische binäre Ergebnisse. Sie validieren weder Hochwasserschadenprognosen auf Gebäudeebene noch die empirische Richtigkeit ausgewählter Prioritäten und stellen kein einsatzbereites Hochwasserrisikoprodukt dar.</p>
+</section>
+<section aria-labelledby="collaborate-title" class="section" id="collaborate">
+<div class="app-collaboration">
+<p class="eyebrow">Forschungszusammenarbeit prüfen</p>
+<h2 id="collaborate-title">Könnte dieser Ansatz für Ihre Entscheide relevant sein?</h2>
+<p>Habnetic sucht den Austausch mit Gemeinden, Planungsfachleuten, Hochwasserrisikospezialisten, Ingenieur- und Umweltberatungen sowie Forschungseinrichtungen.</p>
+<p>Uns interessiert insbesondere, wie Organisationen heute Objekte priorisieren, wie sie mit Unsicherheit umgehen und welche Daten und Validierungen nötig wären, um die posteriore Entscheidungsstabilität für einen konkreten Anwendungsfall zu beurteilen.</p>
+<a class="btn btn-primary" href="mailto:info@habnetic.org?subject=Habnetic%20research%20collaboration">Habnetic kontaktieren <span aria-hidden="true">→</span></a>
+<div aria-label="Forschungsressourcen" class="app-resources">
+<a href="/de/">Forschungsstartseite ↗</a>
+<a href="/assets/docs/habnetic_demo.pdf">Demo-PDF ansehen ↗</a>
+<a href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Veröffentlichter Preprint ↗</a>
+<a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">Open-Source-Repositories ↗</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer" id="contact">
+<div>
+<h2>Kontakt</h2>
+<p>Anfragen für wissenschaftliche Zusammenarbeit und Forschung sind willkommen.</p>
+<p>
+<a href="mailto:info@habnetic.org">info@habnetic.org</a><br/>
+<a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub-Organisation</a><br/>
+<a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn — Mikel Martínez Mugica</a>
+</p>
+</div>
+<div>
+<p>© 2026 Habnetic — Offene Forschung zur Entscheidungsstabilität unter Unsicherheit</p>
+<p>Erstellt von <strong>Mikel Martínez Mugica</strong><br/>Unabhängiger Forscher</p>
+<p>
+<a href="https://orcid.org/0009-0006-5170-4405" rel="noopener noreferrer" target="_blank">ORCID</a> ·
+        <a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub</a> ·
+        <a href="mailto:info@habnetic.org">E-Mail</a> ·
+        <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</p>
+</div>
+</footer>
+</body>
+</html>
+

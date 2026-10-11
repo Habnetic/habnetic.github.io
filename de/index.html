@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="de-CH">
+<head>
+<meta charset="utf-8"/>
+<meta content="OfWMRhAWWNQ1nZcVbK0dRLGUdzLj9I5eCcz_EuerePI" name="google-site-verification">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Habnetic — Entscheidungsstabilität unter Unsicherheit</title>
+<meta content="Habnetic untersucht mit bayesschen Methoden, wie Unsicherheit diskrete Priorisierungsentscheide beeinflusst, am Beispiel städtischer Hochwasserrisiken." name="description"/>
+<link href="https://habnetic.org/de/" rel="canonical"/>
+<meta content="Habnetic — Entscheidungsstabilität unter Unsicherheit" property="og:title"/>
+<meta content="Wie stabil bleibt eine Prioritätenauswahl, wenn Risikoschätzungen unsicher sind?" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://habnetic.org/de/" property="og:url"/>
+<meta content="https://habnetic.org/assets/images/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/assets/images/favicon.png" rel="icon" type="image/png"/>
+<link href="/styles.css" rel="stylesheet"/>
+<style>
+    /* Decision-stability explainer */
+    .decision-panel {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 18px;
+      align-items: stretch;
+      padding: 18px;
+      background: rgba(249, 249, 249, 0.035);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .decision-step {
+      padding: 26px;
+      background: var(--panel);
+      border: 1px solid rgba(249, 249, 249, 0.075);
+      border-radius: 18px;
+    }
+
+    .decision-step:last-of-type {
+      background:
+        linear-gradient(135deg, rgba(41, 211, 195, 0.12), rgba(255, 75, 58, 0.045)),
+        var(--panel);
+    }
+
+    .decision-icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 20px;
+      color: var(--turquoise);
+    }
+
+    .decision-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
+    }
+
+    .decision-step h3 {
+      margin-bottom: 9px;
+      color: var(--white);
+      font-size: 1.15rem;
+    }
+
+    .decision-step p {
+      font-size: 0.95rem;
+    }
+
+    .decision-arrow {
+      align-self: center;
+      color: var(--coral);
+      font-size: 1.5rem;
+    }
+
+    /* Conference reference: evidence, not decoration */
+    .conference-note {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 26px;
+      padding: 22px 24px;
+      background:
+        linear-gradient(120deg, rgba(41, 211, 195, 0.10), transparent 58%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .conference-badge {
+      display: inline-grid;
+      place-items: center;
+      min-width: 76px;
+      min-height: 76px;
+      padding: 10px;
+      color: var(--navy);
+      background: var(--turquoise);
+      border-radius: 16px;
+      font-size: 0.86rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .conference-note h3 {
+      margin-bottom: 5px;
+      color: var(--white);
+      font-size: 1.16rem;
+    }
+
+    .conference-note p {
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .decision-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .decision-arrow {
+        justify-self: center;
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .decision-panel {
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .decision-step {
+        padding: 20px;
+      }
+
+      .conference-note {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .conference-badge {
+        min-width: 0;
+        min-height: 0;
+        justify-self: start;
+      }
+    }
+  </style>
+<script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "xjqiwto2h2");
+  </script>
+</meta><meta content="de_CH" property="og:locale"/><link href="https://habnetic.org/" hreflang="en" rel="alternate"/><link href="https://habnetic.org/de/" hreflang="de-CH" rel="alternate"/><link href="https://habnetic.org/es/" hreflang="es" rel="alternate"/><link href="https://habnetic.org/eu/" hreflang="eu" rel="alternate"/><link href="https://habnetic.org/" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header class="site-header">
+<a aria-label="Habnetic – Startseite Forschung" class="brand" href="/de/">
+<img alt="" class="brand-logo" src="/assets/images/logo.png"/>
+<span>Habnetic</span>
+</a>
+<nav aria-label="Hauptnavigation" class="site-nav">
+<a aria-current="page" href="/de/">Forschung</a>
+<a href="/de/#findings">Ergebnisse</a>
+<a href="/de/applications/">Anwendungen</a>
+<a href="/de/#outputs">Publikationen</a>
+<a href="/de/#about">Über uns</a>
+<a href="/de/#contact">Kontakt</a>
+</nav>
+<!-- Language selector: English available; do not link to unpublished translations.
+         Future routes for this page:
+         DE: /de/
+         ES: /es/
+         EU: /eu/
+         Once translated pages exist, replace their disabled spans with <a href="...">.
+         Add reciprocal hreflang tags only when the corresponding URLs are live. -->
+<details class="language-menu">
+<summary aria-label="Sprache auswählen. Aktuelle Sprache: Deutsch (Schweiz)">
+<svg aria-hidden="true" class="language-menu-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+<span>DE</span>
+<svg aria-hidden="true" class="language-menu-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</summary>
+<div aria-label="Verfügbare Sprachen" class="language-menu-panel">
+<a href="/" hreflang="en" lang="en">English <span class="language-menu-code">EN</span></a> <a aria-current="page" href="/de/" hreflang="de-CH" lang="de-CH">Deutsch (CH) <span class="language-menu-code">DE</span></a> <a href="/es/" hreflang="es" lang="es">Español <span class="language-menu-code">ES</span></a> <a href="/eu/" hreflang="eu" lang="eu">Euskara <span class="language-menu-code">EU</span></a>
+</div>
+</details>
+</header>
+<main id="main">
+<section class="hero" id="home">
+<div class="hero-content">
+<p class="eyebrow">Entscheidungsstabilität unter Unsicherheit</p>
+<h1>
+          Wie stabil ist eine Entscheidung
+          <span>unter Unsicherheit?</span>
+</h1>
+<p class="hero-subtitle">
+          Risikomodelle liefern unsichere Schätzungen, Planungsentscheide sind jedoch oft binär: Ein Objekt wird für eine vertiefte Prüfung ausgewählt oder nicht. Unsicherheit in einer Schätzung bedeutet nicht zwangsläufig Unsicherheit in der resultierenden Prioritätenliste.
+        </p>
+<p class="hero-problem">
+          Habnetic untersucht anhand von Stichproben aus der bayesschen Posteriorverteilung, wie zuverlässig Objekte in eine Prioritätenmenge mit fester Grösse aufgenommen werden. So wird sichtbar, wo die Auswahl unter dem angepassten Modell stabil bleibt und wo die Zugehörigkeit nahe der Entscheidungsgrenze unsicher ist.
+        </p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="/assets/docs/habnetic_demo.pdf">Demo als PDF ansehen</a>
+<a class="btn btn-secondary" href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Preprint lesen</a>
+<a class="btn btn-secondary" href="/assets/docs/habnetic_onepager.pdf">Kurzüberblick</a>
+</div>
+<p class="hero-applications-link">Interessieren Sie sich für praktische Entscheidungsprobleme? <a href="/de/applications/">Mögliche Anwendungen entdecken <span aria-hidden="true">→</span></a></p>
+</div>
+<div aria-label="Karte der posterioren Top-k-Zugehörigkeitswahrscheinlichkeit" class="hero-visual">
+<img alt="Rotterdam: Karte der posterioren Top-k-Zugehörigkeitswahrscheinlichkeit" class="hero-map is-active" id="hero-map-a" src="/assets/images/hero/rotterdam.png"/>
+<img alt="" aria-hidden="true" class="hero-map" id="hero-map-b" src="/assets/images/hero/hamburg.png"/>
+<div class="hero-info-card">
+<p class="hero-card-label">Experimentelles Untersuchungsgebiet</p>
+<div class="hero-city-label">
+<strong id="hero-city">Rotterdam</strong>
+<span id="hero-buildings">221'324 Gebäude</span>
+<span id="hero-topk">Prioritätsmenge: k = 2'213 · 1 %</span>
+<span id="hero-boundary">Unsicherer Grenzbereich: 30 Gebäude (0,0136 %)</span>
+</div>
+<div aria-label="Kartenlegende" class="hero-legend">
+<div class="legend-row">
+<span class="legend-swatch legend-yellow"></span>
+<span>Hohe posteriore Top-k-Zugehörigkeit</span>
+</div>
+<div class="legend-row">
+<span class="legend-swatch legend-orange"></span>
+<span>Mittlere Top-k-Zugehörigkeit</span>
+</div>
+<div class="legend-row">
+<span class="legend-swatch legend-grey"></span>
+<span>Geringe posteriore Top-k-Zugehörigkeit</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="why-title" class="section" id="why">
+<div class="section-heading">
+<p class="eyebrow">Weshalb Entscheidungsstabilität?</p>
+<h2 id="why-title">Unsicherheit ist relevant, wenn sie einen Entscheid verändern kann</h2>
+</div>
+<div class="decision-panel">
+<article class="decision-step">
+<div aria-hidden="true" class="decision-icon">
+<svg viewbox="0 0 48 48">
+<path d="M5 31c5-1 7-12 13-12s7 15 13 15 7-10 12-11"></path>
+<path d="M5 24c5-1 7-12 13-12s7 15 13 15 7-10 12-11" opacity=".45"></path>
+</svg>
+</div>
+<h3>Geschätztes Risiko</h3>
+<p>Risikoschätzungen variieren zwischen Ziehungen aus der Posteriorverteilung. Diese Unterschiede verändern jedoch nicht immer die Auswahl der Objekte.</p>
+</article>
+<span aria-hidden="true" class="decision-arrow">→</span>
+<article class="decision-step">
+<div aria-hidden="true" class="decision-icon">
+<svg viewbox="0 0 48 48">
+<path d="M24 6v36"></path>
+<path d="M8 15h13M27 33h13"></path>
+<circle cx="24" cy="24" r="4"></circle>
+</svg>
+</div>
+<h3>Entscheidungsregel</h3>
+<p>Eine Auswahlregel mit fester Kapazität übersetzt Schätzungen in Entscheide: Für jede Ziehung werden die Objekte geordnet und die obersten k ausgewählt.</p>
+</article>
+<span aria-hidden="true" class="decision-arrow">→</span>
+<article class="decision-step">
+<div aria-hidden="true" class="decision-icon">
+<svg viewbox="0 0 48 48">
+<path d="M8 24h12"></path>
+<path d="m15 17 7 7-7 7"></path>
+<path d="M28 13h12v22H28"></path>
+</svg>
+</div>
+<h3>Stabile oder unsichere Auswahl</h3>
+<p>Die posteriore Wahrscheinlichkeit, zur Top-k-Menge zu gehören, unterscheidet konsistente Auswahlen von einem unsicheren Entscheidungsbereich.</p>
+</article>
+</div>
+</section>
+<section class="section" id="findings">
+<div class="section-heading">
+<p class="eyebrow">Experimentelle Ergebnisse</p>
+<h2>Was die Experimente zeigen</h2>
+</div>
+<div class="findings-panel">
+<div class="finding finding-main">
+<span class="finding-icon">◎</span>
+<div>
+<h2>Die meisten Objekte liegen ausserhalb des Bereichs unsicherer Zugehörigkeit.</h2>
+<p>In Rotterdam weisen bei einer Priorisierungskapazität von rund 1 % nur 30 von 221'324 Gebäuden (0,0136 %) posteriore Top-k-Zugehörigkeitswahrscheinlichkeiten zwischen 0,2 und 0,8 auf.</p>
+</div>
+</div>
+<div class="finding">
+<span class="finding-icon">⌁</span>
+<div>
+<h3>Instabilität konzentriert sich nahe der Auswahlgrenze.</h3>
+<p>Mittlere Zugehörigkeitswahrscheinlichkeiten konzentrieren sich nahe dem Top-k-Grenzwert statt über die gesamte Rangfolge verteilt zu sein.</p>
+</div>
+</div>
+<div class="finding">
+<span class="finding-icon">⌕</span>
+<div>
+<h3>Kontrollierte Störungen des Gefährdungsindikators verbreitern den Grenzbereich nur geringfügig.</h3>
+<p>In einer Rotterdam-Stichprobe mit 50'000 Gebäuden steigt die mediane Anzahl von Objekten im unsicheren Grenzbereich bei den stärksten getesteten Störungen von 10 auf 11.</p>
+</div>
+</div>
+<div class="finding">
+<span class="finding-icon">◈</span>
+<div>
+<h3>Die Struktur bleibt bei unterschiedlichen städtischen Eingangsdaten erhalten.</h3>
+<p>Unabhängig angepasste Modelle für Hamburg und Donostia–San Sebastián weisen bei gleicher Spezifikation ebenfalls lokal begrenzte Entscheidungsbereiche auf, deren Breite jedoch variiert.</p>
+</div>
+</div>
+</div>
+<div class="research-scope">
+<strong>Geltungsbereich der Forschung.</strong> Die Experimente verwenden vereinfachte Expositions- und Gefährdungsindikatoren, ein bayessches logistisches Modell und synthetische Ergebnisdaten. Sie untersuchen die Stabilität von Priorisierungen unter festgelegten Annahmen, nicht validierte Überschwemmungswahrscheinlichkeiten oder beobachtete Schäden auf Gebäudeebene.
+      </div>
+</section>
+<aside aria-label="Explore practical relevance" class="crosslink-band section">
+<div>
+<p class="eyebrow">Von der Forschung zu möglichen Anwendungen</p>
+<h2>Was könnte die Analyse der Entscheidungsstabilität zur Planung beitragen?</h2>
+<p>Entdecken Sie mögliche Einsatzfelder, offene Fragen und die vor einer praktischen Anwendung nötigen Validierungen.</p>
+</div>
+<a class="btn btn-primary" href="/de/applications/">Anwendungen entdecken <span aria-hidden="true">→</span></a>
+</aside>
+<section class="section" id="outputs">
+<div class="section-heading">
+<p class="eyebrow">Forschungsergebnisse und Materialien</p>
+<h2>Forschung entdecken</h2>
+</div>
+<article class="conference-note">
+<div aria-hidden="true" class="conference-badge">RSS<br/>2026</div>
+<div>
+<h3>Präsentiert an der RSS International Conference 2026</h3>
+<p><em>Posterior-Based Decision Stability in Urban Flood Risk Prioritisation</em> · Rapid-Fire-Präsentation · Bournemouth, September 2026.</p>
+</div>
+</article>
+<div class="cards">
+<article class="card">
+<img alt="Vorschau: Kurzüberblick" src="/assets/images/cards/onepager-preview.png"/>
+<div class="card-body">
+<h3>Kurzüberblick</h3>
+<p>Ein visueller Überblick über das Verfahren zur Entscheidungsstabilität und die experimentellen Ergebnisse.</p>
+<a href="/assets/docs/habnetic_onepager.pdf">Kurzüberblick öffnen →</a>
+</div>
+</article>
+<article class="card">
+<img alt="Vorschau: Demo" src="/assets/images/cards/demo-preview.png"/>
+<div class="card-body">
+<h3>Demo</h3>
+<p>Eine PDF-Einführung in den experimentellen Ansatz und die Ergebnisse aus drei Städten.</p>
+<a href="/assets/docs/habnetic_demo.pdf">Demo-PDF ansehen →</a>
+</div>
+</article>
+<article class="card">
+<img alt="Vorschau: Forschungsarbeit" src="/assets/images/cards/paper-preview.png"/>
+<div class="card-body">
+<h3>Veröffentlichter Preprint</h3>
+<p><em>Posterior-Based Decision Stability under Cross-City Stress Testing in Urban Flood Risk Prioritisation</em>. Nicht begutachteter Preprint, Oktober 2026.</p>
+<a href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Auf Zenodo lesen →</a>
+</div>
+</article>
+</div>
+</section>
+<section class="section" id="about">
+<div class="about-panel">
+<div aria-hidden="true" class="about-orbit">
+<div class="orbit"></div>
+<img alt="" class="about-logo" src="/assets/images/logo.png"/>
+</div>
+<div class="about-copy">
+<p class="eyebrow">Über Habnetic</p>
+<h2>Offene Forschung für städtische Entscheide unter Unsicherheit</h2>
+<p>
+            Habnetic ist ein unabhängiges Open-Source-Forschungsprojekt. Es untersucht, wie sich Unsicherheit von statistischen Schätzungen auf diskrete Planungs- und Priorisierungsentscheide überträgt.
+          </p>
+<p>
+            Als experimentelles Anwendungsfeld dient die Priorisierung städtischer Hochwasserrisiken: ein Referenzfall in Rotterdam, kontrollierte Störungen des Gefährdungsindikators und Belastungstests mit fester Spezifikation in Hamburg und Donostia–San Sebastián.
+          </p>
+</div>
+<ul class="about-list">
+<li>Bayessche Inferenz mit PyMC</li>
+<li>Prior- und Posterior-Predictive-Checks</li>
+<li>Städteübergreifende Belastungstests mit fester Spezifikation</li>
+<li>Offene Daten und reproduzierbarer Code</li>
+</ul>
+</div>
+</section>
+</main>
+<footer class="site-footer" id="contact">
+<div>
+<h2>Kontakt</h2>
+<p>Anfragen für wissenschaftliche Zusammenarbeit und Forschung sind willkommen.</p>
+<p>
+<a href="mailto:info@habnetic.org">info@habnetic.org</a><br/>
+<a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub-Organisation</a><br/>
+<a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn — Mikel Martínez Mugica</a>
+</p>
+</div>
+<div>
+<p>© 2026 Habnetic — Offene Forschung zur Entscheidungsstabilität unter Unsicherheit</p>
+<p>
+    Erstellt von <strong>Mikel Martínez Mugica</strong><br/>
+    Unabhängiger Forscher
+  </p>
+<p>
+<a href="https://orcid.org/0009-0006-5170-4405" rel="noopener noreferrer" target="_blank">ORCID</a> ·
+    <a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub</a> ·
+    <a href="mailto:info@habnetic.org">E-Mail</a> ·
+    <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</p>
+</div>
+</footer>
+<script>
+    const heroCities = [
+      {
+        city: "Rotterdam",
+        image: "/assets/images/hero/rotterdam.png",
+        alt: "Rotterdam: Karte der posterioren Top-k-Zugehörigkeitswahrscheinlichkeit",
+        buildings: "221'324 Gebäude",
+        topk: "Prioritätsmenge: k = 2'213 · 1 %",
+        boundary: "Unsicherer Grenzbereich: 30 Gebäude (0,0136 %)"
+      },
+      {
+        city: "Hamburg",
+        image: "/assets/images/hero/hamburg.png",
+        alt: "Hamburg: Karte der posterioren Top-k-Zugehörigkeitswahrscheinlichkeit",
+        buildings: "341'530 Gebäude",
+        topk: "Prioritätsmenge: k = 3'415 · 1 %",
+        boundary: "Unsicherer Grenzbereich: 56 Gebäude (0,0164 %)"
+      },
+      {
+        city: "Donostia–San Sebastián",
+        image: "/assets/images/hero/donostia.png",
+        alt: "Donostia: Karte der posterioren Top-k-Zugehörigkeitswahrscheinlichkeit",
+        buildings: "7'755 Gebäude",
+        topk: "Prioritätsmenge: k = 78 · rund 1 %",
+        boundary: "Unsicherer Grenzbereich: 13 Gebäude (0,1676 %)"
+      }
+    ];
+
+    const heroA = document.getElementById("hero-map-a");
+    const heroB = document.getElementById("hero-map-b");
+    const heroCard = document.querySelector(".hero-info-card");
+    const heroCity = document.getElementById("hero-city");
+    const heroBuildings = document.getElementById("hero-buildings");
+    const heroTopk = document.getElementById("hero-topk");
+    const heroBoundary = document.getElementById("hero-boundary");
+
+    let currentHero = 0;
+    let activeImage = heroA;
+    let inactiveImage = heroB;
+
+    function updateHero() {
+      currentHero = (currentHero + 1) % heroCities.length;
+      const next = heroCities[currentHero];
+
+      inactiveImage.src = next.image;
+      inactiveImage.alt = next.alt;
+      inactiveImage.removeAttribute("aria-hidden");
+
+      heroCard.classList.add("is-fading");
+
+      setTimeout(() => {
+        heroCity.textContent = next.city;
+        heroBuildings.textContent = next.buildings;
+        heroTopk.textContent = next.topk;
+        heroBoundary.textContent = next.boundary;
+
+        heroCard.classList.remove("is-fading");
+      }, 450);
+
+      inactiveImage.classList.add("is-active");
+      activeImage.classList.remove("is-active");
+      activeImage.alt = "";
+      activeImage.setAttribute("aria-hidden", "true");
+
+      const oldActive = activeImage;
+      activeImage = inactiveImage;
+      inactiveImage = oldActive;
+    }
+
+    // Preserve the existing rotation, but respect reduced-motion preferences.
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setInterval(updateHero, 11000);
+    }
+  </script>
+</body>
+</html>
+

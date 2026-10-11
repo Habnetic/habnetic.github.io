@@ -1,25 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="google-site-verification" content="OfWMRhAWWNQ1nZcVbK0dRLGUdzLj9I5eCcz_EuerePI" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Habnetic — Decision stability under uncertainty</title>
-
-  <meta name="description" content="Habnetic studies how uncertainty propagates into discrete planning and prioritisation decisions, using urban flood risk as its current case study.">
-  <link rel="canonical" href="https://habnetic.org/">
-
-  <meta property="og:title" content="Habnetic — Decision stability under uncertainty">
-  <meta property="og:description" content="How stable is a decision when uncertainty reaches the decision rule?">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://habnetic.org/">
-  <meta property="og:image" content="https://habnetic.org/assets/images/og-image.png">
-
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <link rel="stylesheet" href="styles.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="OfWMRhAWWNQ1nZcVbK0dRLGUdzLj9I5eCcz_EuerePI" name="google-site-verification">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Habnetic — Decision stability under uncertainty</title>
+<meta content="Habnetic investigates how uncertainty affects discrete prioritisation decisions using Bayesian methods, with urban flood risk as an experimental case study." name="description"/>
+<link href="https://habnetic.org/" rel="canonical"/>
+<meta content="Habnetic — Decision stability under uncertainty" property="og:title"/>
+<meta content="How stable are priority selections when the underlying risk estimates are uncertain?" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://habnetic.org/" property="og:url"/>
+<meta content="https://habnetic.org/assets/images/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/assets/images/favicon.png" rel="icon" type="image/png"/>
+<link href="/styles.css" rel="stylesheet"/>
+<style>
     /* Decision-stability explainer */
     .decision-panel {
       display: grid;
@@ -152,316 +149,299 @@
       }
     }
   </style>
-  <script type="text/javascript">
+<script type="text/javascript">
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "xjqiwto2h2");
   </script>
-</head>
-
+</meta><meta content="en_GB" property="og:locale"/><link href="https://habnetic.org/" hreflang="en" rel="alternate"/><link href="https://habnetic.org/de/" hreflang="de-CH" rel="alternate"/><link href="https://habnetic.org/es/" hreflang="es" rel="alternate"/><link href="https://habnetic.org/eu/" hreflang="eu" rel="alternate"/><link href="https://habnetic.org/" hreflang="x-default" rel="alternate"/></head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Habnetic home">
-      <img src="assets/images/logo.png" alt="" class="brand-logo">
-      <span>Habnetic</span>
-    </a>
-
-    <nav class="site-nav" aria-label="Primary navigation">
-      <a href="#home">Home</a>
-      <a href="#findings">Findings</a>
-      <a href="#outputs">Outputs</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section id="home" class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">Decision stability under uncertainty</p>
-
-        <h1>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<a aria-label="Habnetic research home" class="brand" href="/">
+<img alt="" class="brand-logo" src="/assets/images/logo.png"/>
+<span>Habnetic</span>
+</a>
+<nav aria-label="Primary navigation" class="site-nav">
+<a aria-current="page" href="/">Research</a>
+<a href="/#findings">Findings</a>
+<a href="/applications/">Applications</a>
+<a href="/#outputs">Outputs</a>
+<a href="/#about">About</a>
+<a href="/#contact">Contact</a>
+</nav>
+<!-- Language selector: English available; do not link to unpublished translations.
+         Future routes for this page:
+         DE: /de/
+         ES: /es/
+         EU: /eu/
+         Once translated pages exist, replace their disabled spans with <a href="...">.
+         Add reciprocal hreflang tags only when the corresponding URLs are live. -->
+<details class="language-menu">
+<summary aria-label="Choose language. Current language: English">
+<svg aria-hidden="true" class="language-menu-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+<span>EN</span>
+<svg aria-hidden="true" class="language-menu-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</summary>
+<div aria-label="Available languages" class="language-menu-panel">
+<a aria-current="page" href="/" hreflang="en" lang="en">English <span class="language-menu-code">EN</span></a> <a href="/de/" hreflang="de-CH" lang="de-CH">Deutsch (CH) <span class="language-menu-code">DE</span></a> <a href="/es/" hreflang="es" lang="es">Español <span class="language-menu-code">ES</span></a> <a href="/eu/" hreflang="eu" lang="eu">Euskara <span class="language-menu-code">EU</span></a>
+</div>
+</details>
+</header>
+<main id="main">
+<section class="hero" id="home">
+<div class="hero-content">
+<p class="eyebrow">Decision stability under uncertainty</p>
+<h1>
           How stable is a decision
           <span>under uncertainty?</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          Planning and risk systems often turn uncertain continuous estimates into fixed choices: selected or not selected, above or below a threshold, inside or outside a priority set.
+</h1>
+<p class="hero-subtitle">
+          Risk models produce uncertain estimates, but planning decisions are often discrete: an asset is selected for further assessment or it is not. Uncertainty in an estimate does not necessarily imply uncertainty in the resulting priority set.
         </p>
-
-        <p class="hero-problem">
-          Habnetic tests whether those choices remain the same when uncertainty is propagated through the model—identifying decisions that are already reliable and cases that genuinely require further review.
+<p class="hero-problem">
+          Habnetic uses Bayesian posterior draws to examine how consistently assets enter a fixed-capacity priority set. It identifies where selection is stable under the fitted model and where membership remains uncertain near the decision boundary.
         </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="assets/docs/habnetic_demo.pdf">Explore the demo</a>
-          <a class="btn btn-secondary" href="https://doi.org/10.5281/zenodo.23110714" target="_blank" rel="noopener noreferrer">Read the paper</a>
-          <a class="btn btn-secondary" href="assets/docs/habnetic_onepager.pdf">One-pager</a>
-        </div>
+<div class="hero-actions">
+<a class="btn btn-primary" href="/assets/docs/habnetic_demo.pdf">View demo (PDF)</a>
+<a class="btn btn-secondary" href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Read the preprint</a>
+<a class="btn btn-secondary" href="/assets/docs/habnetic_onepager.pdf">One-pager</a>
+</div>
+<p class="hero-applications-link">Interested in practical decision problems? <a href="/applications/">Explore potential applications <span aria-hidden="true">→</span></a></p>
+</div>
+<div aria-label="Posterior top-k probability map" class="hero-visual">
+<img alt="Rotterdam posterior top-k probability map" class="hero-map is-active" id="hero-map-a" src="/assets/images/hero/rotterdam.png"/>
+<img alt="" aria-hidden="true" class="hero-map" id="hero-map-b" src="/assets/images/hero/hamburg.png"/>
+<div class="hero-info-card">
+<p class="hero-card-label">Experimental study area</p>
+<div class="hero-city-label">
+<strong id="hero-city">Rotterdam</strong>
+<span id="hero-buildings">221,324 buildings</span>
+<span id="hero-topk">Top-priority set: k = 2,213 · 1%</span>
+<span id="hero-boundary">Uncertain boundary: 30 buildings (0.0136%)</span>
+</div>
+<div aria-label="Map legend" class="hero-legend">
+<div class="legend-row">
+<span class="legend-swatch legend-yellow"></span>
+<span>High posterior top-k membership</span>
+</div>
+<div class="legend-row">
+<span class="legend-swatch legend-orange"></span>
+<span>Intermediate top-k membership</span>
+</div>
+<div class="legend-row">
+<span class="legend-swatch legend-grey"></span>
+<span>Low posterior top-k membership</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="why-title" class="section" id="why">
+<div class="section-heading">
+<p class="eyebrow">Why decision stability?</p>
+<h2 id="why-title">Uncertainty matters when it can change a decision</h2>
+</div>
+<div class="decision-panel">
+<article class="decision-step">
+<div aria-hidden="true" class="decision-icon">
+<svg viewbox="0 0 48 48">
+<path d="M5 31c5-1 7-12 13-12s7 15 13 15 7-10 12-11"></path>
+<path d="M5 24c5-1 7-12 13-12s7 15 13 15 7-10 12-11" opacity=".45"></path>
+</svg>
+</div>
+<h3>Estimated risk</h3>
+<p>Risk estimates vary across posterior model draws. Those differences do not always change which assets are selected.</p>
+</article>
+<span aria-hidden="true" class="decision-arrow">→</span>
+<article class="decision-step">
+<div aria-hidden="true" class="decision-icon">
+<svg viewbox="0 0 48 48">
+<path d="M24 6v36"></path>
+<path d="M8 15h13M27 33h13"></path>
+<circle cx="24" cy="24" r="4"></circle>
+</svg>
+</div>
+<h3>Decision rule</h3>
+<p>A fixed-capacity rule converts estimates into selections: in each posterior draw, assets are ranked and the top k are selected.</p>
+</article>
+<span aria-hidden="true" class="decision-arrow">→</span>
+<article class="decision-step">
+<div aria-hidden="true" class="decision-icon">
+<svg viewbox="0 0 48 48">
+<path d="M8 24h12"></path>
+<path d="m15 17 7 7-7 7"></path>
+<path d="M28 13h12v22H28"></path>
+</svg>
+</div>
+<h3>Stable or uncertain selection</h3>
+<p>An asset's posterior top-k membership probability distinguishes consistent selections from an uncertain decision boundary.</p>
+</article>
+</div>
+</section>
+<section class="section" id="findings">
+<div class="section-heading">
+<p class="eyebrow">Experimental findings</p>
+<h2>What the experiments show</h2>
+</div>
+<div class="findings-panel">
+<div class="finding finding-main">
+<span class="finding-icon">◎</span>
+<div>
+<h2>Most assets lie outside the uncertain membership boundary.</h2>
+<p>In Rotterdam, with approximately 1% prioritisation capacity, only 30 of 221,324 buildings (0.0136%) have posterior top-k membership probabilities between 0.2 and 0.8.</p>
+</div>
+</div>
+<div class="finding">
+<span class="finding-icon">⌁</span>
+<div>
+<h3>Instability concentrates near the selection boundary.</h3>
+<p>Intermediate membership probabilities are concentrated near the top-k cut-off rather than across the entire asset ranking.</p>
+</div>
+</div>
+<div class="finding">
+<span class="finding-icon">⌕</span>
+<div>
+<h3>Controlled hazard perturbations cause limited broadening.</h3>
+<p>In a 50,000-building Rotterdam subsample, the median uncertain-boundary count rises from 10 to 11 at the largest tested perturbation levels.</p>
+</div>
+</div>
+<div class="finding">
+<span class="finding-icon">◈</span>
+<div>
+<h3>The structure persists across different urban inputs.</h3>
+<p>Independent Hamburg and Donostia–San Sebastián fits retain localised decision boundaries under the same specification, although their widths differ.</p>
+</div>
+</div>
+</div>
+<div class="research-scope">
+<strong>Research scope.</strong> These experiments use simplified exposure and hazard proxies, a Bayesian logistic model and synthetic outcomes. They investigate prioritisation stability under specified assumptions, not validated flood probabilities or observed building-level losses.
       </div>
-
-      <div class="hero-visual" aria-label="Posterior top-k probability map">
-        <img
-          id="hero-map-a"
-          class="hero-map is-active"
-          src="assets/images/hero/rotterdam.png"
-          alt="Rotterdam posterior top-k probability map"
-        >
-        <img
-          id="hero-map-b"
-          class="hero-map"
-          src="assets/images/hero/hamburg.png"
-          alt=""
-          aria-hidden="true"
-        >
-
-        <div class="hero-info-card">
-          <p class="hero-card-label">Baseline case study</p>
-
-          <div class="hero-city-label">
-            <strong id="hero-city">Rotterdam</strong>
-            <span id="hero-buildings">221,324 buildings</span>
-            <span id="hero-topk">Top-priority set: k = 2,213 · 1%</span>
-            <span id="hero-boundary">Unstable boundary assets: 0.01%</span>
-          </div>
-
-          <div class="hero-legend" aria-label="Map legend">
-            <div class="legend-row">
-              <span class="legend-swatch legend-yellow"></span>
-              <span>High probability · inside top-k</span>
-            </div>
-            <div class="legend-row">
-              <span class="legend-swatch legend-orange"></span>
-              <span>Boundary uncertainty</span>
-            </div>
-            <div class="legend-row">
-              <span class="legend-swatch legend-grey"></span>
-              <span>Low probability · outside top-k</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="why" class="section" aria-labelledby="why-title">
-      <div class="section-heading">
-        <p class="eyebrow">Why decision stability?</p>
-        <h2 id="why-title">Uncertainty matters when it can change an action</h2>
-      </div>
-
-      <div class="decision-panel">
-        <article class="decision-step">
-          <div class="decision-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M5 31c5-1 7-12 13-12s7 15 13 15 7-10 12-11"></path>
-              <path d="M5 24c5-1 7-12 13-12s7 15 13 15 7-10 12-11" opacity=".45"></path>
-            </svg>
-          </div>
-          <h3>Uncertain estimate</h3>
-          <p>Risk, exposure, distance, cost and probability are continuous quantities—and none is known perfectly.</p>
-        </article>
-
-        <span class="decision-arrow" aria-hidden="true">→</span>
-
-        <article class="decision-step">
-          <div class="decision-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M24 6v36"></path>
-              <path d="M8 15h13M27 33h13"></path>
-              <circle cx="24" cy="24" r="4"></circle>
-            </svg>
-          </div>
-          <h3>Decision rule</h3>
-          <p>A system introduces a boundary: top 1%, within 20 m, above a threshold, eligible or not eligible.</p>
-        </article>
-
-        <span class="decision-arrow" aria-hidden="true">→</span>
-
-        <article class="decision-step">
-          <div class="decision-icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48">
-              <path d="M8 24h12"></path>
-              <path d="m15 17 7 7-7 7"></path>
-              <path d="M28 13h12v22H28"></path>
-            </svg>
-          </div>
-          <h3>Stable—or review</h3>
-          <p>If uncertainty does not change the outcome, the decision is stable. If it does, that case deserves attention.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="findings" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Initial findings</p>
-        <h2>What the experiments show</h2>
-      </div>
-
-      <div class="findings-panel">
-        <div class="finding finding-main">
-          <span class="finding-icon">◎</span>
-          <div>
-            <h2>Uncertainty does not make every decision uncertain.</h2>
-            <p>In the Rotterdam reference case, posterior simulations agree on the prioritisation status of more than 99% of buildings.</p>
-          </div>
-        </div>
-
-        <div class="finding">
-          <span class="finding-icon">⌁</span>
-          <div>
-            <h3>Instability concentrates near the decision boundary.</h3>
-            <p>Posterior uncertainty affects only a small subset of borderline assets rather than the entire city.</p>
-          </div>
-        </div>
-
-        <div class="finding">
-          <span class="finding-icon">⌕</span>
-          <div>
-            <h3>The uncertain cases can be identified explicitly.</h3>
-            <p>Posterior disagreement reveals which assets may change status across plausible model outcomes.</p>
-          </div>
-        </div>
-
-        <div class="finding">
-          <span class="finding-icon">◈</span>
-          <div>
-            <h3>Review effort can be targeted.</h3>
-            <p>Experts can focus on unstable boundary cases instead of revisiting every prioritisation decision.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="outputs" class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Research outputs</p>
-        <h2>Explore the research</h2>
-      </div>
-
-      <article class="conference-note">
-        <div class="conference-badge" aria-hidden="true">RSS<br>2026</div>
-        <div>
-          <h3>Presented at the RSS International Conference 2026</h3>
-          <p><em>Posterior-Based Decision Stability in Urban Flood Risk Prioritisation</em> · Rapid-Fire presentation · Bournemouth, September 2026.</p>
-        </div>
-      </article>
-
-      <div class="cards">
-        <article class="card">
-          <img src="assets/images/cards/onepager-preview.png" alt="One-pager preview">
-          <div class="card-body">
-            <h3>One-pager</h3>
-            <p>A visual summary of the framework and key results.</p>
-            <a href="assets/docs/habnetic_onepager.pdf">View one-pager →</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="assets/images/cards/demo-preview.png" alt="Demo preview">
-          <div class="card-body">
-            <h3>Demo</h3>
-            <p>A compact walkthrough of prioritisation stability across cities.</p>
-            <a href="assets/docs/habnetic_demo.pdf">Launch demo →</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <img src="assets/images/cards/paper-preview.png" alt="Research paper preview">
-          <div class="card-body">
-            <h3>Published paper</h3>
-            <p><em>Posterior-Based Decision Stability under Cross-City Stress Testing in Urban Flood Risk Prioritisation</em></p>
-            <a href="https://doi.org/10.5281/zenodo.23110714" target="_blank" rel="noopener noreferrer">Read on Zenodo →</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="about-panel">
-        <div class="about-orbit" aria-hidden="true">
-          <div class="orbit"></div>
-          <img src="assets/images/logo.png" alt="" class="about-logo">
-        </div>
-
-        <div class="about-copy">
-          <p class="eyebrow">About Habnetic</p>
-          <h2>Open research for uncertainty-aware urban decisions</h2>
-          <p>
-            Habnetic is an independent open-source research project studying how uncertainty
-            propagates into discrete planning and prioritisation decisions.
+</section>
+<aside aria-label="Explore practical relevance" class="crosslink-band section">
+<div>
+<p class="eyebrow">From research to possible applications</p>
+<h2>What might decision-stability analysis contribute to planning?</h2>
+<p>Explore potential uses, open questions and the validation required before practical adoption.</p>
+</div>
+<a class="btn btn-primary" href="/applications/">Explore Applications <span aria-hidden="true">→</span></a>
+</aside>
+<section class="section" id="outputs">
+<div class="section-heading">
+<p class="eyebrow">Research outputs</p>
+<h2>Explore the research</h2>
+</div>
+<article class="conference-note">
+<div aria-hidden="true" class="conference-badge">RSS<br/>2026</div>
+<div>
+<h3>Presented at the RSS International Conference 2026</h3>
+<p><em>Posterior-Based Decision Stability in Urban Flood Risk Prioritisation</em> · Rapid-Fire presentation · Bournemouth, September 2026.</p>
+</div>
+</article>
+<div class="cards">
+<article class="card">
+<img alt="One-pager preview" src="/assets/images/cards/onepager-preview.png"/>
+<div class="card-body">
+<h3>One-pager</h3>
+<p>A visual overview of the decision-stability framework and experimental results.</p>
+<a href="/assets/docs/habnetic_onepager.pdf">View one-pager →</a>
+</div>
+</article>
+<article class="card">
+<img alt="Demo preview" src="/assets/images/cards/demo-preview.png"/>
+<div class="card-body">
+<h3>Demo</h3>
+<p>A PDF walkthrough of the experimental framework and results across three cities.</p>
+<a href="/assets/docs/habnetic_demo.pdf">View demo PDF →</a>
+</div>
+</article>
+<article class="card">
+<img alt="Research paper preview" src="/assets/images/cards/paper-preview.png"/>
+<div class="card-body">
+<h3>Published preprint</h3>
+<p><em>Posterior-Based Decision Stability under Cross-City Stress Testing in Urban Flood Risk Prioritisation</em>. Non-peer-reviewed, October 2026.</p>
+<a href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Read on Zenodo →</a>
+</div>
+</article>
+</div>
+</section>
+<section class="section" id="about">
+<div class="about-panel">
+<div aria-hidden="true" class="about-orbit">
+<div class="orbit"></div>
+<img alt="" class="about-logo" src="/assets/images/logo.png"/>
+</div>
+<div class="about-copy">
+<p class="eyebrow">About Habnetic</p>
+<h2>Open research for uncertainty-aware urban decisions</h2>
+<p>
+            Habnetic is an independent, open-source research project investigating how uncertainty
+            propagates from statistical estimates into discrete planning and prioritisation decisions.
           </p>
-          <p>
-            The current case study uses urban flood prioritisation to develop and test the framework across Rotterdam, Hamburg and Donostia-San Sebastián.
+<p>
+            The current research uses urban flood-risk prioritisation as an experimental setting: a Rotterdam baseline, controlled hazard-proxy perturbations and fixed-specification cross-city stress tests in Hamburg and Donostia–San Sebastián.
           </p>
-        </div>
-
-        <ul class="about-list">
-          <li>Bayesian inference with PyMC</li>
-          <li>Posterior predictive checks</li>
-          <li>Cross-city stress testing</li>
-          <li>Open data and reproducible code</li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer id="contact" class="site-footer">
-    <div>
-      <h2>Contact</h2>
-      <p>Collaboration and research inquiries welcome.</p>
-      <p>
-        <a href="mailto:info@habnetic.org">info@habnetic.org</a><br>
-        <a href="https://github.com/Habnetic" target="_blank" rel="noopener noreferrer">GitHub Organization</a><br>
-        <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank" rel="noopener noreferrer">LinkedIn — Mikel Martínez Mugica</a>
-      </p>
-    </div>
-
-    <div>
-  <p>© 2026 Habnetic — Open research on decision stability under uncertainty</p>
-
-  <p>
-    Created by <strong>Mikel Martínez Mugica</strong><br>
+</div>
+<ul class="about-list">
+<li>Bayesian inference with PyMC</li>
+<li>Prior and posterior predictive checks</li>
+<li>Fixed-specification cross-city stress testing</li>
+<li>Open data and reproducible code</li>
+</ul>
+</div>
+</section>
+</main>
+<footer class="site-footer" id="contact">
+<div>
+<h2>Contact</h2>
+<p>Scientific collaboration and research enquiries are welcome.</p>
+<p>
+<a href="mailto:info@habnetic.org">info@habnetic.org</a><br/>
+<a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub Organization</a><br/>
+<a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn — Mikel Martínez Mugica</a>
+</p>
+</div>
+<div>
+<p>© 2026 Habnetic — Open research on decision stability under uncertainty</p>
+<p>
+    Created by <strong>Mikel Martínez Mugica</strong><br/>
     Independent Researcher
   </p>
-
-  <p>
-    <a href="https://orcid.org/0009-0006-5170-4405" target="_blank" rel="noopener noreferrer">ORCID</a> ·
-    <a href="https://github.com/Habnetic" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+<p>
+<a href="https://orcid.org/0009-0006-5170-4405" rel="noopener noreferrer" target="_blank">ORCID</a> ·
+    <a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub</a> ·
     <a href="mailto:info@habnetic.org">Email</a> ·
-    <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-  </p>
+    <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</p>
 </div>
-  </footer>
-
-  <script>
+</footer>
+<script>
     const heroCities = [
       {
         city: "Rotterdam",
-        image: "assets/images/hero/rotterdam.png",
+        image: "/assets/images/hero/rotterdam.png",
         alt: "Rotterdam posterior top-k probability map",
         buildings: "221,324 buildings",
         topk: "Top-priority set: k = 2,213 · 1%",
-        boundary: "Unstable boundary assets: 0.01%"
+        boundary: "Uncertain boundary: 30 buildings (0.0136%)"
       },
       {
         city: "Hamburg",
-        image: "assets/images/hero/hamburg.png",
+        image: "/assets/images/hero/hamburg.png",
         alt: "Hamburg posterior top-k probability map",
         buildings: "341,530 buildings",
         topk: "Top-priority set: k = 3,415 · 1%",
-        boundary: "Unstable boundary assets: 0.02%"
+        boundary: "Uncertain boundary: 56 buildings (0.0164%)"
       },
       {
         city: "Donostia-San Sebastián",
-        image: "assets/images/hero/donostia.png",
+        image: "/assets/images/hero/donostia.png",
         alt: "Donostia-San Sebastián posterior top-k probability map",
         buildings: "7,755 buildings",
         topk: "Top-priority set: k = 78 · 1%",
-        boundary: "Unstable boundary assets: 0.17%"
+        boundary: "Uncertain boundary: 13 buildings (0.1676%)"
       }
     ];
 
@@ -506,7 +486,11 @@
       inactiveImage = oldActive;
     }
 
-    setInterval(updateHero, 11000);
+    // Preserve the existing rotation, but respect reduced-motion preferences.
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setInterval(updateHero, 11000);
+    }
   </script>
 </body>
 </html>
+

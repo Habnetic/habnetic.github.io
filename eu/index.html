@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="eu">
+<head>
+<meta charset="utf-8"/>
+<meta content="OfWMRhAWWNQ1nZcVbK0dRLGUdzLj9I5eCcz_EuerePI" name="google-site-verification">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Habnetic — Erabakien egonkortasuna ziurgabetasunaren aurrean</title>
+<meta content="Habnetic-ek Bayesen metodoen bidez ziurgabetasunak lehenespen-erabaki diskretuetan duen eragina aztertzen du, hiri-uholdeen arriskua kasu esperimental gisa hartuta." name="description"/>
+<link href="https://habnetic.org/eu/" rel="canonical"/>
+<meta content="Habnetic — Erabakien egonkortasuna ziurgabetasunaren aurrean" property="og:title"/>
+<meta content="Zenbateraino dira egonkorrak lehentasunak arrisku-estimazioak ziurgabeak direnean?" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://habnetic.org/eu/" property="og:url"/>
+<meta content="https://habnetic.org/assets/images/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<link href="/assets/images/favicon.png" rel="icon" type="image/png"/>
+<link href="/styles.css" rel="stylesheet"/>
+<style>
+    /* Decision-stability explainer */
+    .decision-panel {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 18px;
+      align-items: stretch;
+      padding: 18px;
+      background: rgba(249, 249, 249, 0.035);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .decision-step {
+      padding: 26px;
+      background: var(--panel);
+      border: 1px solid rgba(249, 249, 249, 0.075);
+      border-radius: 18px;
+    }
+
+    .decision-step:last-of-type {
+      background:
+        linear-gradient(135deg, rgba(41, 211, 195, 0.12), rgba(255, 75, 58, 0.045)),
+        var(--panel);
+    }
+
+    .decision-icon {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 20px;
+      color: var(--turquoise);
+    }
+
+    .decision-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.7;
+    }
+
+    .decision-step h3 {
+      margin-bottom: 9px;
+      color: var(--white);
+      font-size: 1.15rem;
+    }
+
+    .decision-step p {
+      font-size: 0.95rem;
+    }
+
+    .decision-arrow {
+      align-self: center;
+      color: var(--coral);
+      font-size: 1.5rem;
+    }
+
+    /* Conference reference: evidence, not decoration */
+    .conference-note {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 26px;
+      padding: 22px 24px;
+      background:
+        linear-gradient(120deg, rgba(41, 211, 195, 0.10), transparent 58%),
+        var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .conference-badge {
+      display: inline-grid;
+      place-items: center;
+      min-width: 76px;
+      min-height: 76px;
+      padding: 10px;
+      color: var(--navy);
+      background: var(--turquoise);
+      border-radius: 16px;
+      font-size: 0.86rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .conference-note h3 {
+      margin-bottom: 5px;
+      color: var(--white);
+      font-size: 1.16rem;
+    }
+
+    .conference-note p {
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 980px) {
+      .decision-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .decision-arrow {
+        justify-self: center;
+        transform: rotate(90deg);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .decision-panel {
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .decision-step {
+        padding: 20px;
+      }
+
+      .conference-note {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .conference-badge {
+        min-width: 0;
+        min-height: 0;
+        justify-self: start;
+      }
+    }
+  </style>
+<script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "xjqiwto2h2");
+  </script>
+</meta><meta content="eu_ES" property="og:locale"/><link href="https://habnetic.org/" hreflang="en" rel="alternate"/><link href="https://habnetic.org/de/" hreflang="de-CH" rel="alternate"/><link href="https://habnetic.org/es/" hreflang="es" rel="alternate"/><link href="https://habnetic.org/eu/" hreflang="eu" rel="alternate"/><link href="https://habnetic.org/" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#main">Joan edukira</a>
+<header class="site-header">
+<a aria-label="Habnetic — ikerketaren hasiera" class="brand" href="/eu/">
+<img alt="" class="brand-logo" src="/assets/images/logo.png"/>
+<span>Habnetic</span>
+</a>
+<nav aria-label="Nabigazio nagusia" class="site-nav">
+<a aria-current="page" href="/eu/">Ikerketa</a>
+<a href="/eu/#findings">Emaitzak</a>
+<a href="/eu/applications/">Aplikazioak</a>
+<a href="/eu/#outputs">Argitalpenak</a>
+<a href="/eu/#about">Guri buruz</a>
+<a href="/eu/#contact">Kontaktua</a>
+</nav>
+<!-- Language selector: English available; do not link to unpublished translations.
+         Future routes for this page:
+         DE: /de/
+         ES: /es/
+         EU: /eu/
+         Once translated pages exist, replace their disabled spans with <a href="...">.
+         Add reciprocal hreflang tags only when the corresponding URLs are live. -->
+<details class="language-menu">
+<summary aria-label="Aukeratu hizkuntza. Uneko hizkuntza: euskara">
+<svg aria-hidden="true" class="language-menu-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"></path></svg>
+<span>EU</span>
+<svg aria-hidden="true" class="language-menu-chevron" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="m6 9 6 6 6-6"></path></svg>
+</summary>
+<div aria-label="Hizkuntza erabilgarriak" class="language-menu-panel">
+<a href="/" hreflang="en" lang="en">English <span class="language-menu-code">EN</span></a> <a href="/de/" hreflang="de-CH" lang="de-CH">Deutsch (CH) <span class="language-menu-code">DE</span></a> <a href="/es/" hreflang="es" lang="es">Español <span class="language-menu-code">ES</span></a> <a aria-current="page" href="/eu/" hreflang="eu" lang="eu">Euskara <span class="language-menu-code">EU</span></a>
+</div>
+</details>
+</header>
+<main id="main">
+<section class="hero" id="home">
+<div class="hero-content">
+<p class="eyebrow">Erabakien egonkortasuna ziurgabetasunaren aurrean</p>
+<h1>
+          Zenbateraino da egonkorra erabaki bat
+          <span>ziurgabetasuna dagoenean?</span>
+</h1>
+<p class="hero-subtitle">
+          Arrisku-ereduek estimazio ziurgabeak ematen dituzte, baina plangintzako erabakiak sarritan bitarrak dira: elementu bat azterketa sakonago baterako hautatzen da, edo ez. Estimazioaren ziurgabetasunak ez du zertan lehentasunezko multzoaren ziurgabetasuna ekarri.
+        </p>
+<p class="hero-problem">
+          Habnetic-ek Bayesen a posteriori banaketako laginak erabiltzen ditu elementuak tamaina finkoko lehentasunezko multzo batean zenbaterainoko maiztasunez sartzen diren aztertzeko. Horrela, doitu den ereduaren arabera hautaketa non den egonkorra eta erabaki-mugatik gertu kidetza non den zalantzazkoa identifikatzen du.
+        </p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="/assets/docs/habnetic_demo.pdf">Ikusi demoa (PDF) (PDF) (PDF) (PDF) (PDF) (PDF) (PDF)</a>
+<a class="btn btn-secondary" href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Irakurri aurreargitalpena</a>
+<a class="btn btn-secondary" href="/assets/docs/habnetic_onepager.pdf">Laburpen grafikoa</a>
+</div>
+<p class="hero-applications-link">Erabaki praktikoen inguruko arazoak interesatzen zaizkizu? <a href="/eu/applications/">Aztertu aplikazio posibleak <span aria-hidden="true">→</span></a></p>
+</div>
+<div aria-label="Top-k kidetzaren a posteriori probabilitateen mapa" class="hero-visual">
+<img alt="Rotterdam: top-k kidetzaren a posteriori probabilitateen mapa" class="hero-map is-active" id="hero-map-a" src="/assets/images/hero/rotterdam.png"/>
+<img alt="" aria-hidden="true" class="hero-map" id="hero-map-b" src="/assets/images/hero/hamburg.png"/>
+<div class="hero-info-card">
+<p class="hero-card-label">Azterketa esperimentaleko eremua</p>
+<div class="hero-city-label">
+<strong id="hero-city">Rotterdam</strong>
+<span id="hero-buildings">221.324 eraikin</span>
+<span id="hero-topk">Lehentasunezko multzoa: k = 2.213 · % 1</span>
+<span id="hero-boundary">Muga zalantzazkoa: 30 eraikin (% 0,0136)</span>
+</div>
+<div aria-label="Maparen legenda" class="hero-legend">
+<div class="legend-row">
+<span class="legend-swatch legend-yellow"></span>
+<span>Top-k multzoan sartzeko a posteriori probabilitate handia</span>
+</div>
+<div class="legend-row">
+<span class="legend-swatch legend-orange"></span>
+<span>Top-k multzoan sartzeko probabilitate ertaina</span>
+</div>
+<div class="legend-row">
+<span class="legend-swatch legend-grey"></span>
+<span>Top-k multzoan sartzeko a posteriori probabilitate txikia</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section aria-labelledby="why-title" class="section" id="why">
+<div class="section-heading">
+<p class="eyebrow">Zergatik aztertu erabakien egonkortasuna?</p>
+<h2 id="why-title">Ziurgabetasuna garrantzitsua da erabakia alda dezakeenean</h2>
+</div>
+<div class="decision-panel">
+<article class="decision-step">
+<div aria-hidden="true" class="decision-icon">
+<svg viewbox="0 0 48 48">
+<path d="M5 31c5-1 7-12 13-12s7 15 13 15 7-10 12-11"></path>
+<path d="M5 24c5-1 7-12 13-12s7 15 13 15 7-10 12-11" opacity=".45"></path>
+</svg>
+</div>
+<h3>Estimatutako arriskua</h3>
+<p>Arrisku-estimazioak aldatu egiten dira a posteriori banaketako laginen artean. Aldaketa horiek ez dute beti hautatutako elementuen multzoa aldatzen.</p>
+</article>
+<span aria-hidden="true" class="decision-arrow">→</span>
+<article class="decision-step">
+<div aria-hidden="true" class="decision-icon">
+<svg viewbox="0 0 48 48">
+<path d="M24 6v36"></path>
+<path d="M8 15h13M27 33h13"></path>
+<circle cx="24" cy="24" r="4"></circle>
+</svg>
+</div>
+<h3>Erabaki-araua</h3>
+<p>Edukiera finkoko arau batek estimazioak hautaketa bihurtzen ditu: a posteriori lagin bakoitzean elementuak sailkatu eta lehen k elementuak aukeratzen dira.</p>
+</article>
+<span aria-hidden="true" class="decision-arrow">→</span>
+<article class="decision-step">
+<div aria-hidden="true" class="decision-icon">
+<svg viewbox="0 0 48 48">
+<path d="M8 24h12"></path>
+<path d="m15 17 7 7-7 7"></path>
+<path d="M28 13h12v22H28"></path>
+</svg>
+</div>
+<h3>Hautaketa egonkorra edo zalantzazkoa</h3>
+<p>Elementu bat top-k multzoan sartzeko a posteriori probabilitateak hautaketa sendoak eta erabaki-muga zalantzazkoa bereizten laguntzen du.</p>
+</article>
+</div>
+</section>
+<section class="section" id="findings">
+<div class="section-heading">
+<p class="eyebrow">Emaitza esperimentalak</p>
+<h2>Zer erakusten dute esperimentuek?</h2>
+</div>
+<div class="findings-panel">
+<div class="finding finding-main">
+<span class="finding-icon">◎</span>
+<div>
+<h2>Elementu gehienak kidetza zalantzazkoaren eremutik kanpo daude.</h2>
+<p>Rotterdamen, gutxi gorabehera % 1eko lehenespen-edukierarekin, 221.324 eraikinetatik 30ek bakarrik (% 0,0136) dute top-k multzoan sartzeko 0,2 eta 0,8 arteko a posteriori probabilitatea.</p>
+</div>
+</div>
+<div class="finding">
+<span class="finding-icon">⌁</span>
+<div>
+<h3>Ezegonkortasuna hautaketa-mugaren inguruan pilatzen da.</h3>
+<p>Kidetza-probabilitate ertainak top-k atalasearen inguruan pilatzen dira, sailkapen osoan zehar sakabanatu beharrean.</p>
+</div>
+</div>
+<div class="finding">
+<span class="finding-icon">⌕</span>
+<div>
+<h3>Arrisku-adierazlearen perturbazio kontrolatuek muga gutxi zabaltzen dute.</h3>
+<p>Rotterdamgo 50.000 eraikineko azpilagin batean, muga zalantzazkoko elementuen kopuruaren mediana 10etik 11ra igotzen da probatutako perturbazio-maila handienetan.</p>
+</div>
+</div>
+<div class="finding">
+<span class="finding-icon">◈</span>
+<div>
+<h3>Egitura mantentzen da hiri-datu desberdinekin.</h3>
+<p>Hamburgen eta Donostian modu independentean doitutako ereduek erabaki-muga lokalizatuak mantentzen dituzte zehaztapen berarekin, nahiz eta haien zabalera aldatu.</p>
+</div>
+</div>
+</div>
+<div class="research-scope">
+<strong>Ikerketaren irismena.</strong> Esperimentuek esposizio- eta mehatxu-adierazle sinplifikatuak, Bayesen eredu logistiko bat eta emaitza sintetikoak erabiltzen dituzte. Suposizio jakin batzuen araberako lehenespenaren egonkortasuna aztertzen dute, ez uholde-probabilitate balioztatuak edo eraikinetan behatutako kalteak.
+      </div>
+</section>
+<aside aria-label="Explore practical relevance" class="crosslink-band section">
+<div>
+<p class="eyebrow">Ikerketatik aplikazio posibleetara</p>
+<h2>Zer ekarpen egin diezaioke erabakien egonkortasunaren analisiak plangintzari?</h2>
+<p>Aztertu erabilera posibleak, galdera irekiak eta aplikazio praktikoaren aurretik behar den baliozkotzea.</p>
+</div>
+<a class="btn btn-primary" href="/eu/applications/">Aztertu aplikazioak <span aria-hidden="true">→</span></a>
+</aside>
+<section class="section" id="outputs">
+<div class="section-heading">
+<p class="eyebrow">Ikerketaren emaitzak eta materialak</p>
+<h2>Aztertu ikerketa</h2>
+</div>
+<article class="conference-note">
+<div aria-hidden="true" class="conference-badge">RSS<br/>2026</div>
+<div>
+<h3>RSS International Conference 2026 jardunaldian aurkeztua</h3>
+<p><em>Posterior-Based Decision Stability in Urban Flood Risk Prioritisation</em> · Rapid-Fire aurkezpena · Bournemouth, 2026ko iraila.</p>
+</div>
+</article>
+<div class="cards">
+<article class="card">
+<img alt="Aurrebista: laburpen grafikoa" src="/assets/images/cards/onepager-preview.png"/>
+<div class="card-body">
+<h3>Laburpen grafikoa</h3>
+<p>Erabakien egonkortasunaren esparruaren eta emaitza esperimental nagusien laburpen grafikoa.</p>
+<a href="/assets/docs/habnetic_onepager.pdf">Ikusi laburpena →</a>
+</div>
+</article>
+<article class="card">
+<img alt="Aurrebista: demoa" src="/assets/images/cards/demo-preview.png"/>
+<div class="card-body">
+<h3>Demoa</h3>
+<p>Esparru esperimentalari eta hiru hirietako emaitzei buruzko PDF azalpena.</p>
+<a href="/assets/docs/habnetic_demo.pdf">Ikusi PDF demoa →</a>
+</div>
+</article>
+<article class="card">
+<img alt="Aurrebista: ikerketa-artikulua" src="/assets/images/cards/paper-preview.png"/>
+<div class="card-body">
+<h3>Argitaratutako aurreargitalpena</h3>
+<p><em>Posterior-Based Decision Stability under Cross-City Stress Testing in Urban Flood Risk Prioritisation</em>. Parekoen ebaluaziorik gabeko aurreargitalpena, 2026ko urria.</p>
+<a href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Irakurri Zenodon →</a>
+</div>
+</article>
+</div>
+</section>
+<section class="section" id="about">
+<div class="about-panel">
+<div aria-hidden="true" class="about-orbit">
+<div class="orbit"></div>
+<img alt="" class="about-logo" src="/assets/images/logo.png"/>
+</div>
+<div class="about-copy">
+<p class="eyebrow">Habnetic-i buruz</p>
+<h2>Ziurgabetasunaren aurrean hiri-erabakiak hartzeko ikerketa irekia</h2>
+<p>
+            Habnetic ikerketa-proiektu independentea eta kode irekikoa da. Estimazio estatistikoen ziurgabetasuna plangintzako eta lehenespeneko erabaki diskretuetara nola hedatzen den aztertzen du.
+          </p>
+<p>
+            Egungo ikerketak hiri-uholdeen arriskuaren lehenespena erabiltzen du ingurune esperimental gisa: Rotterdamgo erreferentziazko kasua, mehatxu-adierazlearen perturbazio kontrolatuak eta zehaztapen finkoko estres-probak Hanburgon eta Donostian.
+          </p>
+</div>
+<ul class="about-list">
+<li>Bayesen inferentzia PyMC-rekin</li>
+<li>A priori eta a posteriori iragarpen-egiaztapenak</li>
+<li>Hirien arteko estres-probak zehaztapen finkoarekin</li>
+<li>Datu irekiak eta kode erreproduzigarria</li>
+</ul>
+</div>
+</section>
+</main>
+<footer class="site-footer" id="contact">
+<div>
+<h2>Kontaktua</h2>
+<p>Ikerketa eta lankidetza zientifikorako kontsultak ongi etorriak dira.</p>
+<p>
+<a href="mailto:info@habnetic.org">info@habnetic.org</a><br/>
+<a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub erakundea</a><br/>
+<a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn — Mikel Martínez Mugica</a>
+</p>
+</div>
+<div>
+<p>© 2026 Habnetic — Ziurgabetasunaren aurrean erabakien egonkortasunari buruzko ikerketa irekia</p>
+<p>
+    Sortzailea: <strong>Mikel Martínez Mugica</strong><br/>
+    Ikertzaile independentea
+  </p>
+<p>
+<a href="https://orcid.org/0009-0006-5170-4405" rel="noopener noreferrer" target="_blank">ORCID</a> ·
+    <a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">GitHub</a> ·
+    <a href="mailto:info@habnetic.org">Helbide elektronikoa</a> ·
+    <a href="https://www.linkedin.com/in/mikel-martinez-6a2a9635/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+</p>
+</div>
+</footer>
+<script>
+    const heroCities = [
+      {
+        city: "Rotterdam",
+        image: "/assets/images/hero/rotterdam.png",
+        alt: "Rotterdam: top-k kidetzaren a posteriori probabilitateen mapa",
+        buildings: "221.324 eraikin",
+        topk: "Lehentasunezko multzoa: k = 2.213 · % 1",
+        boundary: "Muga zalantzazkoa: 30 eraikin (% 0,0136)"
+      },
+      {
+        city: "Hamburg",
+        image: "/assets/images/hero/hamburg.png",
+        alt: "Hanburgo: top-k kidetzaren a posteriori probabilitateen mapa",
+        buildings: "341.530 eraikin",
+        topk: "Lehentasunezko multzoa: k = 3.415 · % 1",
+        boundary: "Muga zalantzazkoa: 56 eraikin (% 0,0164)"
+      },
+      {
+        city: "Donostia–San Sebastián",
+        image: "/assets/images/hero/donostia.png",
+        alt: "Donostia: top-k kidetzaren a posteriori probabilitateen mapa",
+        buildings: "7.755 eraikin",
+        topk: "Lehentasunezko multzoa: k = 78 · % 1 inguru",
+        boundary: "Muga zalantzazkoa: 13 eraikin (% 0,1676)"
+      }
+    ];
+
+    const heroA = document.getElementById("hero-map-a");
+    const heroB = document.getElementById("hero-map-b");
+    const heroCard = document.querySelector(".hero-info-card");
+    const heroCity = document.getElementById("hero-city");
+    const heroBuildings = document.getElementById("hero-buildings");
+    const heroTopk = document.getElementById("hero-topk");
+    const heroBoundary = document.getElementById("hero-boundary");
+
+    let currentHero = 0;
+    let activeImage = heroA;
+    let inactiveImage = heroB;
+
+    function updateHero() {
+      currentHero = (currentHero + 1) % heroCities.length;
+      const next = heroCities[currentHero];
+
+      inactiveImage.src = next.image;
+      inactiveImage.alt = next.alt;
+      inactiveImage.removeAttribute("aria-hidden");
+
+      heroCard.classList.add("is-fading");
+
+      setTimeout(() => {
+        heroCity.textContent = next.city;
+        heroBuildings.textContent = next.buildings;
+        heroTopk.textContent = next.topk;
+        heroBoundary.textContent = next.boundary;
+
+        heroCard.classList.remove("is-fading");
+      }, 450);
+
+      inactiveImage.classList.add("is-active");
+      activeImage.classList.remove("is-active");
+      activeImage.alt = "";
+      activeImage.setAttribute("aria-hidden", "true");
+
+      const oldActive = activeImage;
+      activeImage = inactiveImage;
+      inactiveImage = oldActive;
+    }
+
+    // Preserve the existing rotation, but respect reduced-motion preferences.
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setInterval(updateHero, 11000);
+    }
+  </script>
+</body>
+</html>
+
