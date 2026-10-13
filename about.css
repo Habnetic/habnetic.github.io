@@ -1,0 +1,115 @@
+/* Habnetic researcher profile. Additive stylesheet: existing styles.css is unchanged. */
+.researcher-panel {
+  padding: clamp(24px, 4vw, 48px);
+  background: linear-gradient(130deg, rgba(41, 211, 195, .075), rgba(255, 75, 58, .025)), var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.researcher-top {
+  display: grid;
+  grid-template-columns: 158px minmax(0, 1fr);
+  gap: clamp(24px, 3.5vw, 48px);
+  align-items: start;
+}
+.researcher-portrait {
+  width: 156px;
+  height: 156px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--turquoise);
+  background: linear-gradient(145deg, rgba(41, 211, 195, .15), rgba(11, 19, 43, .9));
+  display: grid;
+  place-items: center;
+  box-shadow: 0 12px 28px rgba(0,0,0,.25);
+}
+.researcher-portrait span {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--turquoise);
+}
+/* Place your real portrait at /assets/images/about/mikel-martinez-mugica.jpg .
+   If it is absent, the initials MM remain visible automatically. */
+.researcher-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/images/about/mikel-martinez-mugica.jpg") center 28% / cover no-repeat;
+}
+.researcher-copy h2 { margin-bottom: 12px; }
+.researcher-role {
+  color: var(--turquoise);
+  font-weight: 650;
+  margin-bottom: 18px;
+  overflow-wrap: anywhere;
+}
+.researcher-copy p + p { margin-top: 12px; }
+.researcher-subheading {
+  margin: 32px 0 18px;
+  color: var(--white);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+}
+.researcher-milestones {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+.researcher-milestones li {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  min-width: 0;
+}
+.researcher-milestones h4 { font-size: 1.02rem; line-height: 1.35; margin-bottom: 7px; }
+.researcher-milestones p { font-size: .91rem; }
+.researcher-ref-links { display: block; margin-top: 12px; }
+.researcher-ref-links a, .researcher-identity a {
+  color: var(--turquoise);
+  font-size: .91rem;
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: .2em;
+}
+.researcher-ref-links a:hover, .researcher-identity a:hover,
+.researcher-ref-links a:focus-visible, .researcher-identity a:focus-visible {
+  color: var(--white);
+  text-decoration-color: currentColor;
+}
+.researcher-identity {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.researcher-teaser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 28px 34px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: linear-gradient(120deg, rgba(41, 211, 195, .08), transparent), var(--panel);
+}
+.researcher-teaser > div { flex: 1; min-width: 0; }
+.researcher-teaser h2 { font-size: clamp(1.65rem, 2.6vw, 2.3rem); margin-bottom: 12px; }
+.researcher-teaser p:not(.eyebrow) { max-width: 710px; }
+.researcher-teaser .btn { flex-shrink: 0; text-align: center; }
+@media (max-width: 800px) {
+  .researcher-top { grid-template-columns: 1fr; }
+  .researcher-teaser { flex-direction: column; align-items: stretch; }
+  .researcher-teaser .btn { align-self: flex-start; }
+}
+@media (max-width: 600px) {
+  .researcher-panel { padding: 22px; }
+  .researcher-portrait { width: 120px; height: 120px; }
+  .researcher-milestones { grid-template-columns: 1fr; }
+  .researcher-teaser { padding: 22px; }
+  .researcher-teaser .btn { align-self: stretch; }
+}
