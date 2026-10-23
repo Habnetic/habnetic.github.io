@@ -5,11 +5,11 @@
 <meta charset="utf-8"/>
 <meta content="OfWMRhAWWNQ1nZcVbK0dRLGUdzLj9I5eCcz_EuerePI" name="google-site-verification">
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Habnetic — Decision stability under uncertainty</title>
-<meta content="Habnetic investigates how uncertainty affects discrete prioritisation decisions using Bayesian methods, with urban flood risk as an experimental case study." name="description"/>
+<title>Habnetic — Reliable decisions under uncertainty</title>
+<meta content="Habnetic is independent open-source research on probabilistic inference, constrained selection and decision reliability under uncertainty. Urban flood-risk prioritisation is its first experimental case." name="description"/>
 <link href="https://habnetic.org/" rel="canonical"/>
-<meta content="Habnetic — Decision stability under uncertainty" property="og:title"/>
-<meta content="How stable are priority selections when the underlying risk estimates are uncertain?" property="og:description"/>
+<meta content="Habnetic — Reliable decisions under uncertainty" property="og:title"/>
+<meta content="Researching the reliability of decisions under uncertain evidence, model assumptions and limited resources." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://habnetic.org/" property="og:url"/>
 <meta content="https://habnetic.org/assets/images/og-image.png" property="og:image"/>
@@ -188,20 +188,20 @@
 <main id="main">
 <section class="hero" id="home">
 <div class="hero-content">
-<p class="eyebrow">Decision stability under uncertainty</p>
+<p class="eyebrow">Inference · Constrained selection · Decision reliability</p>
 <h1>
-          How stable is a decision
-          <span>under uncertainty?</span>
+          How reliable are decisions
+          <span>made under uncertainty?</span>
 </h1>
 <p class="hero-subtitle">
-          Risk models produce uncertain estimates, but planning decisions are often discrete: an asset is selected for further assessment or it is not. Uncertainty in an estimate does not necessarily imply uncertainty in the resulting priority set.
+          Models inform decisions, but evidence is incomplete, assumptions matter and resources are limited. Habnetic investigates how uncertainty affects the choices we make and how confidently those choices can be defended.
         </p>
 <p class="hero-problem">
-          Habnetic uses Bayesian posterior draws to examine how consistently assets enter a fixed-capacity priority set. It identifies where selection is stable under the fitted model and where membership remains uncertain near the decision boundary.
+          The first experimental case studies Bayesian top-k selection in urban flood-risk prioritisation across Rotterdam, Hamburg and Donostia–San Sebastián. It measures stability under fitted models; whether those choices are correct in practice remains a separate question for validation.
         </p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="/assets/docs/habnetic_demo.pdf">View demo (PDF)</a>
-<a class="btn btn-secondary" href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Read the preprint</a>
+<a class="btn btn-secondary" href="https://doi.org/10.5281/zenodo.23599344" rel="noopener noreferrer" target="_blank">Read the preprint</a>
 <a class="btn btn-secondary" href="/assets/docs/habnetic_onepager.pdf">One-pager</a>
 </div>
 <p class="hero-applications-link">Interested in practical decision problems? <a href="/applications/">Explore potential applications <span aria-hidden="true">→</span></a></p>
@@ -247,8 +247,8 @@
 <path d="M5 24c5-1 7-12 13-12s7 15 13 15 7-10 12-11" opacity=".45"></path>
 </svg>
 </div>
-<h3>Estimated risk</h3>
-<p>Risk estimates vary across posterior model draws. Those differences do not always change which assets are selected.</p>
+<h3>Uncertain estimates</h3>
+<p>In the flood-risk experiment, estimates vary across posterior draws. Those differences do not always change which assets are selected.</p>
 </article>
 <span aria-hidden="true" class="decision-arrow">→</span>
 <article class="decision-step">
@@ -275,6 +275,7 @@
 <p>An asset's posterior top-k membership probability distinguishes consistent selections from an uncertain decision boundary.</p>
 </article>
 </div>
+<p class="research-scope"><strong>Stability is not the same as correctness.</strong> A decision can remain unchanged across posterior draws and still be poorly informed if the data, model assumptions or decision rule are unsuitable. Decision reliability also depends on evidence quality and the consequences of being wrong.</p>
 </section>
 <section class="section" id="findings">
 <div class="section-heading">
@@ -312,14 +313,34 @@
 </div>
 </div>
 <div class="research-scope">
-<strong>Research scope.</strong> These experiments use simplified exposure and hazard proxies, a Bayesian logistic model and synthetic outcomes. They investigate prioritisation stability under specified assumptions, not validated flood probabilities or observed building-level losses.
+<strong>Research scope.</strong> Phase 3 uses simplified exposure and hazard proxies, a Bayesian logistic model and synthetic outcomes. Rotterdam, Hamburg and Donostia–San Sebastián were fitted independently under a fixed specification: this was a cross-city stress test, <strong>not</strong> a transfer of posterior information between cities. The results investigate selection stability under specified assumptions, not validated flood probabilities, observed building-level losses or operational decision accuracy.
       </div>
+</section>
+<section aria-labelledby="direction-title" class="section" id="research-direction">
+<div class="app-section-heading">
+<p class="eyebrow">Research roadmap</p>
+<h2 id="direction-title">Strengthening the evidence, then testing what can generalise</h2>
+<p>The published flood-risk experiments establish a starting point, not a general validation of the methodology. The next phases distinguish work in progress from research questions that have yet to be tested.</p>
+</div>
+<div class="app-grid-2">
+<article class="app-card">
+<p class="card-kicker">Phase 4 · In progress</p>
+<h3>Evidence quality and cross-domain testing</h3>
+<p>Part A develops the flood-risk test bed through topography (M1), hazard uncertainty (M2), exposure, vulnerability and consequences (M3), and independent validation (M4). Reproduction and audit of Phase 3 (M0) are complete. Part B is exploring a second decision domain, with building simulation and satellite observation planning as candidates. Cross-domain results are not yet established.</p>
+</article>
+<article class="app-card emphasis">
+<p class="card-kicker">Phase 5 · Proposed</p>
+<h3>Probabilistic knowledge transfer</h3>
+<p>Investigate whether evidence from data-rich places can improve inference and decisions where observations are scarce. Possible approaches include hierarchical Bayesian models and partial pooling, with explicit tests of compatibility and negative transfer. Unlike the independent city fits in Phase 3, this would involve transferring probabilistic information between settings.</p>
+</article>
+</div>
+<p class="app-note">Research directions are hypotheses and design intentions, not demonstrated performance, validated services or confirmed institutional collaborations.</p>
 </section>
 <aside aria-label="Explore practical relevance" class="crosslink-band section">
 <div>
-<p class="eyebrow">From research to possible applications</p>
-<h2>What might decision-stability analysis contribute to planning?</h2>
-<p>Explore potential uses, open questions and the validation required before practical adoption.</p>
+<p class="eyebrow">From method to possible applications</p>
+<h2>Where else might uncertain models shape consequential choices?</h2>
+<p>Explore candidate applications in building simulation, Earth observation and asset prioritisation, alongside the evidence needed before practical adoption.</p>
 </div>
 <a class="btn btn-primary" href="/applications/">Explore Applications <span aria-hidden="true">→</span></a>
 </aside>
@@ -355,9 +376,9 @@
 <article class="card">
 <img alt="Research paper preview" src="/assets/images/cards/paper-preview.png"/>
 <div class="card-body">
-<h3>Published preprint</h3>
-<p><em>Posterior-Based Decision Stability under Cross-City Stress Testing in Urban Flood Risk Prioritisation</em>. Non-peer-reviewed, October 2026.</p>
-<a href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Read on Zenodo →</a>
+<h3>Published preprint · v1.1</h3>
+<p><em>Posterior-Based Decision Stability under Cross-City Stress Testing in Urban Flood Risk Prioritisation</em>. Version 1.1, non-peer-reviewed, October 2026.</p>
+<a href="https://doi.org/10.5281/zenodo.23599344" rel="noopener noreferrer" target="_blank">Read on Zenodo →</a>
 </div>
 </article>
 </div>
@@ -370,20 +391,20 @@
 </div>
 <div class="about-copy">
 <p class="eyebrow">About Habnetic</p>
-<h2>Open research for uncertainty-aware urban decisions</h2>
+<h2>Open research on reliable decisions under uncertainty</h2>
 <p>
-            Habnetic is an independent, open-source research project investigating how uncertainty
-            propagates from statistical estimates into discrete planning and prioritisation decisions.
+            Habnetic is an independent, open-source research project on probabilistic inference,
+            selection under constraints and the reliability of decisions made with imperfect evidence.
           </p>
 <p>
-            The current research uses urban flood-risk prioritisation as an experimental setting: a Rotterdam baseline, controlled hazard-proxy perturbations and fixed-specification cross-city stress tests in Hamburg and Donostia–San Sebastián.
+            Urban flood-risk prioritisation is the first experimental case, not the limit of the project. Ongoing work aims to improve evidence and validation; future research may test generalisation across domains and probabilistic knowledge transfer between data-rich and data-scarce settings.
           </p>
 </div>
 <ul class="about-list">
-<li>Bayesian inference with PyMC</li>
-<li>Prior and posterior predictive checks</li>
-<li>Fixed-specification cross-city stress testing</li>
-<li>Open data and reproducible code</li>
+<li>Bayesian inference, diagnostics and predictive checks</li>
+<li>Constrained selection and posterior decision stability</li>
+<li>Independent cross-city tests (published)</li>
+<li>Knowledge transfer and cross-domain tests (proposed)</li>
 </ul>
 </div>
 </section>
@@ -404,7 +425,7 @@
     <ul class="researcher-milestones"><li><h4>ETH Zürich · MAS</h4><p>History and Theory of Architecture.</p> <span class="researcher-ref-links"><a href="https://gta.arch.ethz.ch/en/programmes/gta-mas-programme.html" target="_blank" rel="noopener noreferrer">Programme <span aria-hidden="true">↗</span></a></span></li><li><h4>University of Liechtenstein</h4><p>University teaching in computer-aided design and BIM.</p> <span class="researcher-ref-links"><a href="https://www.uni.li/en/node/127033" target="_blank" rel="noopener noreferrer">CAD <span aria-hidden="true">↗</span></a> · <a href="https://www.uni.li/en/node/127520" target="_blank" rel="noopener noreferrer">BIM <span aria-hidden="true">↗</span></a></span></li><li><h4>Cascina Merlata · Milan</h4><p>Winning B22 team, 2010; realised residential building.</p> <span class="researcher-ref-links"><a href="https://www.b22.it/en/news/aaa-architetticercasi-2010/" target="_blank" rel="noopener noreferrer">Competition <span aria-hidden="true">↗</span></a> · <a href="https://www.b22.it/en/projects/cascina-merlata-housing-sociale/" target="_blank" rel="noopener noreferrer">Built project <span aria-hidden="true">↗</span></a></span></li><li><h4>Venice Architecture Biennale · 2023</h4><p>EWASTE – Burden and Treasure, non-plan and University of Liechtenstein.</p> <span class="researcher-ref-links"><a href="https://uni.li/en/news/2024/04/biennale-exhibition-ewaste-burden-and-treasure-liechtenstein" target="_blank" rel="noopener noreferrer">Exhibition <span aria-hidden="true">↗</span></a></span></li></ul>
     <div class="researcher-identity" aria-label="Research identity">
       <a href="https://orcid.org/0009-0006-5170-4405" target="_blank" rel="noopener noreferrer">ORCID <span aria-hidden="true">↗</span></a>
-      <a href="https://doi.org/10.5281/zenodo.23110714" target="_blank" rel="noopener noreferrer">Published preprint <span aria-hidden="true">↗</span></a>
+      <a href="https://doi.org/10.5281/zenodo.23599344" target="_blank" rel="noopener noreferrer">Published preprint <span aria-hidden="true">↗</span></a>
       <a href="mailto:info@habnetic.org">info@habnetic.org <span aria-hidden="true">↗</span></a>
     </div>
   </div>

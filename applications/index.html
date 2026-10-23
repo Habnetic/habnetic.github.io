@@ -4,11 +4,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Applications | Habnetic — Decision stability under uncertainty</title>
-<meta content="Explore how Habnetic's research on uncertainty and decision stability could inform urban risk prioritisation, planning and resilience assessment." name="description"/>
+<title>Applications | Habnetic — Decision reliability under uncertainty</title>
+<meta content="Explore potential applications of Habnetic's research on uncertain evidence, decision stability and constrained selection, from building simulations to urban risk and Earth observation." name="description"/>
 <link href="https://habnetic.org/applications/" rel="canonical"/>
 <meta content="Applications | Habnetic" property="og:title"/>
-<meta content="Are your priorities stable under uncertainty? Explore potential applications of posterior decision-stability analysis." property="og:description"/>
+<meta content="Explore research questions in building decisions, asset prioritisation, Earth observation and probabilistic knowledge transfer." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://habnetic.org/applications/" property="og:url"/>
 <meta content="https://habnetic.org/assets/images/og-image.png" property="og:image"/>
@@ -56,10 +56,11 @@
 <section aria-labelledby="applications-title" class="application-hero">
 <div class="application-hero-copy">
 <p class="eyebrow">From research to practice</p>
-<h1 id="applications-title">Are your priorities stable <span>under uncertainty?</span></h1>
-<p class="lede">When resources are limited, deciding where to act is as important as estimating risk.</p>
-<p>Municipalities, planning authorities and risk specialists regularly prioritise assets for further assessment or intervention. A conventional ranking shows which assets appear most at risk, but not necessarily how sensitive the selection is to uncertainty.</p>
-<p>Habnetic investigates a complementary question: <strong>which assets remain priorities across posterior model outcomes, and which may move in or out of the selected set?</strong></p>
+<h1 id="applications-title">Can you rely on decisions <span>informed by uncertain models?</span></h1>
+<p class="lede">A precise-looking model output does not necessarily lead to a reliable decision.</p>
+<p>Engineers, planners and researchers use model results to select designs, allocate inspections or decide where to collect more evidence. Limited budgets and uncertain inputs can turn apparently clear rankings into difficult choices.</p>
+<p>Habnetic asks <strong>which choices remain stable under plausible model outcomes, which depend strongly on assumptions, and what evidence would be needed to trust them.</strong> Its published experiment answers a narrower version of this question for fixed-capacity urban flood-risk prioritisation.</p>
+<p>Habnetic complements specialist models and simulations; it does not replace them or claim that the proposed wider applications have already been validated.</p>
 <div class="hero-actions">
 <a class="btn btn-primary" href="#collaborate">Explore a research collaboration</a>
 <a class="btn btn-secondary" href="/#findings">Explore research findings</a>
@@ -77,7 +78,7 @@
 <div class="app-section-heading">
 <p class="eyebrow">The decision problem</p>
 <h2 id="problem-title">A ranking is not the whole decision</h2>
-<p>Consider a municipality with thousands of buildings, but resources to investigate only a small proportion. A risk model produces a ranking and a selection is made. What happens when the underlying estimates are uncertain?</p>
+<p>Consider a municipality with thousands of buildings but capacity to investigate only a small proportion. A risk model produces a ranking and a selection is made. The first Habnetic study asks what happens to that selection as the model estimates vary. Other decisions may have different constraints and consequences.</p>
 </div>
 <div class="app-grid-3">
 <article class="app-card">
@@ -96,12 +97,12 @@
 <p>Some assets remain consistently selected. Others may change status as model parameters vary.</p>
 </article>
 </div>
-<p class="app-note">Decision-stability analysis makes this last distinction visible. It does not, by itself, establish whether a priority ranking is empirically correct.</p>
+<p class="app-note">This three-step diagram describes the published flood-risk experiment. Decision stability is measurable under a fitted model, but stability alone does not establish whether the evidence is adequate, the ranking is empirically correct or the consequences of a wrong choice are acceptable.</p>
 </section>
 <section aria-labelledby="method-title" class="section" id="method">
 <div class="app-section-heading">
 <p class="eyebrow">What Habnetic investigates</p>
-<h2 id="method-title">From uncertain estimates to decision stability</h2>
+<h2 id="method-title">What the first experiment actually measures</h2>
 <p>Instead of selecting assets once from a single ranking, the research ranks and selects the top <em>k</em> assets for each posterior model draw. The proportion of draws in which an asset is selected estimates its posterior top-k membership probability.</p>
 </div>
 <div class="app-grid-3">
@@ -127,7 +128,7 @@
 <div class="app-section-heading">
 <p class="eyebrow">Research evidence</p>
 <h2 id="evidence-title">Three cities, one experimental specification</h2>
-<p>The current experiments cover a Rotterdam baseline, controlled hazard-proxy perturbations and independent applications of the same specification in Hamburg and Donostia–San Sebastián.</p>
+<p>The published experiments cover a Rotterdam baseline, controlled hazard-proxy perturbations and independent model fits under a common specification in Hamburg and Donostia–San Sebastián. This is cross-city stress testing, not probabilistic knowledge transfer between cities.</p>
 </div>
 <div class="app-grid-3 app-evidence-cities">
 <article class="app-card">
@@ -160,34 +161,44 @@
 <figcaption><strong>Donostia: local transition.</strong> An enlarged view near a priority-set membership boundary.</figcaption>
 </figure>
 </div>
-<p class="app-note">The maps visualise model-derived selection membership, not observed flood damage or validated hydraulic risk. See the <a class="app-inline-link" href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">published research preprint</a> for methods and experimental limitations.</p>
+<p class="app-note">The maps visualise model-derived selection membership, not observed flood damage or validated hydraulic risk. See the <a class="app-inline-link" href="https://doi.org/10.5281/zenodo.23599344" rel="noopener noreferrer" target="_blank">published research preprint</a> for methods and experimental limitations.</p>
 </section>
 <section aria-labelledby="usecases-title" class="section" id="use-cases">
 <div class="app-section-heading">
 <p class="eyebrow">Potential applications</p>
-<h2 id="usecases-title">Where could decision-stability analysis be useful?</h2>
-<p>These are possible research and pilot contexts, not operationally validated services. Feasibility depends on available evidence, the decision rule and the organisation's own requirements.</p>
+<h2 id="usecases-title">Where might the research approach be tested next?</h2>
+<p>These are potential research domains, not validated applications or existing products. Each would need its own decision rule, uncertainty model, empirical checks and evidence of usefulness. Flood-risk prioritisation remains the established experimental case.</p>
 </div>
 <div class="app-usecases">
-<article class="app-card">
-<p class="card-kicker">Planning</p>
-<h3>Urban and regional planning</h3>
-<p>Investigating whether buildings or areas remain priorities when quantitative indicators and modelling assumptions are uncertain.</p>
+<article class="app-card emphasis">
+<p class="card-kicker">Candidate domain · Building simulation</p>
+<h3>Building performance and design decisions</h3>
+<p>Explore how choices between design, retrofit or investment options change across uncertain climate, energy and comfort simulations. The research question concerns the decision, not a replacement for the simulation software.</p>
 </article>
 <article class="app-card">
-<p class="card-kicker">Resilience</p>
-<h3>Flood-risk and resilience assessment</h3>
-<p>Studying the stability of selections derived from existing risk models and identifying cases that may merit closer technical review.</p>
+<p class="card-kicker">Candidate domain · Earth observation</p>
+<h3>Satellite observation planning</h3>
+<p>Investigate how limited observation capacity could be allocated when information is incomplete: which places or times might deserve attention, and how sensitive would those priorities be to assumptions?</p>
 </article>
 <article class="app-card">
-<p class="card-kicker">Asset portfolios</p>
+<p class="card-kicker">First experimental domain</p>
+<h3>Urban flood-risk and resilience assessment</h3>
+<p>Study the stability of fixed-capacity selections from uncertain estimates. Work in Phase 4 aims to improve topographic and hazard evidence, exposure, consequences and independent validation.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Potential extension · Portfolios</p>
 <h3>Infrastructure and asset management</h3>
-<p>Exploring how uncertainty affects fixed-capacity inspection or assessment priorities across large portfolios.</p>
+<p>Explore how uncertainty affects inspection, maintenance or assessment priorities across large portfolios with limited capacity.</p>
 </article>
 <article class="app-card">
-<p class="card-kicker">Advisory work</p>
-<h3>Engineering and environmental consultancy</h3>
-<p>Examining sensitivity in selected priorities as a possible complement to deterministic ranking approaches.</p>
+<p class="card-kicker">Potential extension · Planning</p>
+<h3>Urban and regional planning</h3>
+<p>Examine whether selected sites or interventions remain defensible as indicators, constraints, assumptions and available evidence change.</p>
+</article>
+<article class="app-card">
+<p class="card-kicker">Proposed Phase 5 · Transfer</p>
+<h3>Knowledge transfer to data-scarce settings</h3>
+<p>Test whether probabilistic information learnt in data-rich settings can assist decisions elsewhere using hierarchical models and partial pooling, while checking for incompatible evidence and negative transfer.</p>
 </article>
 </div>
 </section>
@@ -195,7 +206,7 @@
 <div class="app-section-heading">
 <p class="eyebrow">Research maturity</p>
 <h2 id="limits-title">What has been tested, and what remains open?</h2>
-<p>Habnetic is independent open-source research. Its existing results concern the behaviour of selection decisions under a deliberately simplified statistical model.</p>
+<p>Habnetic is independent open-source research. Published evidence currently concerns selection stability in deliberately simplified flood-risk experiments. Generalisation, field validation and probabilistic transfer are future research tasks.</p>
 </div>
 <div class="app-limits">
 <article>
@@ -210,14 +221,14 @@
 <article>
 <h3>Further validation needed</h3>
 <ul>
-<li>Evaluation with observed flood impacts or losses.</li>
-<li>Validation of appropriate hydraulic, exposure and vulnerability models.</li>
-<li>Broader prior and model-sensitivity assessment.</li>
-<li>Testing within actual planning and prioritisation workflows.</li>
+<li>Observed flood impacts or losses and independent validation (Phase 4).</li>
+<li>More realistic topographic, hazard, exposure and vulnerability evidence (Phase 4).</li>
+<li>Prior, likelihood and model sensitivity; consequences of wrong choices.</li>
+<li>Independent testing in another decision domain (Phase 4), followed by explicit knowledge-transfer tests (proposed Phase 5).</li>
 </ul>
 </article>
 </div>
-<p class="app-disclaimer">Current experiments use simplified exposure and hazard proxies and synthetic binary outcomes. They do not validate building-level flood-loss predictions, establish the empirical correctness of selected priorities or constitute an operational flood-risk product.</p>
+<p class="app-disclaimer">Current published experiments use simplified exposure and hazard proxies and synthetic binary outcomes. They do not validate building-level flood-loss predictions or the empirical correctness of selected priorities. Phase 3 fitted cities independently; no posterior knowledge was transferred. Phase 4 improvements and Phase 5 transfer research are not completed validations or operational products.</p>
 </section>
 
 <!-- Concise author introduction; the full biography belongs on Research -->
@@ -225,7 +236,7 @@
   <div>
     <p class="eyebrow">The researcher behind Habnetic</p>
     <h2 id="researcher-teaser-title">Who is behind Habnetic?</h2>
-    <p>Habnetic was founded by Mikel Martínez Mugica, an architect and independent researcher based in Zürich. His background combines built projects, university teaching, computational design and probabilistic modelling. He works on understanding how uncertainty affects decisions in the built environment.</p>
+    <p>Habnetic was founded by Mikel Martínez Mugica, an architect and independent researcher based in Zürich. His background combines built projects, university teaching, computational design and probabilistic modelling. Habnetic begins with decisions in the built environment while investigating methods that may generalise beyond it.</p>
   </div>
   <a class="btn btn-secondary" href="/#researcher">About the researcher <span aria-hidden="true">→</span></a>
 </aside>
@@ -233,13 +244,13 @@
 <div class="app-collaboration">
 <p class="eyebrow">Explore a research collaboration</p>
 <h2 id="collaborate-title">Could this approach be relevant to your decisions?</h2>
-<p>Habnetic is interested in speaking with municipalities, planning professionals, flood-risk specialists, engineering consultancies and research organisations.</p>
-<p>We are especially interested in how organisations currently prioritise assets, how uncertainty is handled, and what data and validation would be needed to evaluate posterior decision-stability analysis for a specific use case.</p>
+<p>Habnetic welcomes research conversations with specialists in probabilistic modelling, building simulation, Earth observation, urban risk, engineering, planning and decision analysis.</p>
+<p>Useful collaborations would start with a real decision problem: its constraints, uncertain model outputs, available evidence and the consequences of mistakes. The aim is to design a falsifiable test, not to assume that the existing flood-risk results automatically apply elsewhere.</p>
 <a class="btn btn-primary" href="mailto:info@habnetic.org?subject=Habnetic%20research%20collaboration">Contact Habnetic <span aria-hidden="true">→</span></a>
 <div aria-label="Scientific resources" class="app-resources">
 <a href="/">Research homepage ↗</a>
 <a href="/assets/docs/habnetic_demo.pdf">View demo PDF ↗</a>
-<a href="https://doi.org/10.5281/zenodo.23110714" rel="noopener noreferrer" target="_blank">Published preprint ↗</a>
+<a href="https://doi.org/10.5281/zenodo.23599344" rel="noopener noreferrer" target="_blank">Published preprint ↗</a>
 <a href="https://github.com/Habnetic" rel="noopener noreferrer" target="_blank">Open-source repositories ↗</a>
 </div>
 </div>
